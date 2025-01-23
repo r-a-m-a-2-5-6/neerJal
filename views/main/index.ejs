@@ -1,0 +1,95 @@
+<%- layout('layouts/boilerplate') %>
+<body>
+    <div class="map-box  mt-3" id="map" style=' height: 300px;'>
+        <p class="location"> New Delhi</p>
+    </div>
+    <div class="details-form">
+        <div class="row">
+            <div class="lg-offset-2 col-lg-8">
+                <form action="data" method="POST" >
+                    <h2>Physical Parameters</h2>
+                    <div class="mb-3">
+                        <label class="form-label" for="color" >Colour :</label>
+                        <input type="text" class="form-control" name="data[color]" id="color" placeholder="Enter colour" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="taste">Taste :</label>
+                        <input type="text" class="form-control" name="data[taste]" id="taste" required></input>
+                    </div>
+                    <h2>Chemical Parameters</h2>
+                    <div class="mb-3">
+                        <label class="form-label" for="phValue" >ph value : </label>
+                        <input type="number" class="form-control" name="data[phValue]" id="phValue" placeholder="ph value" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="density">Density :</label>
+                        <input type="text" class="form-control" name="data[density]" id="density" required></input>
+                    </div>
+                    <!-- <div class="mb-3">
+                        <label for="formFilesm" class="form-label">Large file input example</label>
+                        <input class="form-control form-control-sm" id="formFileLg" type="file">
+                      </div> -->
+                    <button class="btn btn-dark add-btn">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiaW5zcGlyZTI1NiIsImEiOiJjbTY3d2I1eHUwN3BkMmtxdXRjODA2bXU2In0.NQ1tGsu8wc-ME8EfxVck_A';
+    </script>
+    <script>
+        const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // map style
+    center: [0, 0], // starting position [lng, lat]
+    zoom: 13, // starting zoom
+    dragPan: false, // Disable map dragging
+    scrollZoom: false, // Disable zooming with scroll
+    doubleClickZoom: false, // Disable zooming with double click
+    touchZoomRotate: false
+  });
+
+  // Add controls to the map
+  map.addControl(new mapboxgl.NavigationControl());
+  map.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: { enableHighAccuracy: true },
+    trackUserLocation: true,
+    showUserHeading: true
+  }));
+
+  // Function to get location name using Mapbox Geocoding API
+  function getLocationName(lng, lat) {
+    const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${lng},${lat}.json?access_token=${mapboxgl.accessToken}`;
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        const placeName = data.features[0]?.place_name || "Location not found";
+        console.log(placeName)
+      })
+      .catch(error => {
+        console.error('Error fetching location name:', error);
+      });
+  }
+
+  // Get current position and display location name
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { longitude, latitude } = position.coords;
+
+        // Center the map on the user's location
+        map.setCenter([longitude, latitude]);
+
+        // Add a marker at the user's location
+        new mapboxgl.Marker().setLngLat([longitude, latitude]).addTo(map);
+
+        // Get and display the location name
+        getLocationName(longitude, latitude);
+      },
+      (error) => {
+        console.error('Error getting location:', error);
+      }
+    );
+  }
+    </script>
+    </body>

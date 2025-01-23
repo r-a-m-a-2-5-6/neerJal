@@ -1,0 +1,23 @@
+<%- layout('layouts/boilerplate') %>
+<body>
+    <div class="filters"></div>
+    <div class="row row-cols-lg-3 row-cols-mgd-2 row-cols-sm-1 d-flex flex-wrap">
+    <% for(let dataset of data){ %>
+        <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title">User Name</h5>
+              <p class=" date mb-2 "><%= dataset.createdAt %></p>
+              <p class="card-text">
+                Color : <%=dataset.color%> <br><br>
+                Taste : <%=dataset.taste%> <br><br>
+                Ph Value : <%-dataset.phValue%> <br><br>
+                Density : <%=dataset.density%>
+            </p>
+            </div>
+          </div>
+    <% } %>
+    </div>
+</body>
+
+
+
