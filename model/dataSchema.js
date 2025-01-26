@@ -5,7 +5,7 @@ main()
 .catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/NeerJal');
+  await mongoose.connect(process.env.ATLAS_DB);
 }
 
 const dataSchema = new Schema({

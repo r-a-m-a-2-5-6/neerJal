@@ -7,8 +7,10 @@ const ejsMate=require("ejs-mate");
 const path = require("path");
 const data=require("./routes/data.js");
 const user=require("./routes/user.js");
+const admin = require("./routes/admin.js")
 const User= require("./model/userSchema.js");
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const Data = require("./model/dataSchema");
 const ExpressError = require("./utils/ExpressError.js");
 const wrapAsync = require("./utils/wrapAsync.js");
@@ -19,11 +21,26 @@ const cookieParser = require("cookie-parser");
 const passport = require('passport');
 const passportLocalMongoose = require("passport-local-mongoose");
 const LocalStratergy = require("passport-local");
-const bodyParser = require('body-parser');
 
 const port = 8080;
+
+const mongoUrl = process.env.ATLAS_DB;
+
+const store = MongoStore.create({
+    mongoUrl:mongoUrl,
+    crypto:{
+        secret:process.env.SECRET
+    },
+    touchAfter: 60*60*24
+
+})
+
+store.on("error" , ()=>{
+    console.log("Error is  mongoosesession ", err)
+})
 const sessionOptions={
-    secret :"NeerJal",
+    store,
+    secret :process.env.SECRET,
     resave:false,
     saveUninitialized:true,
     cookie:{
@@ -40,14 +57,16 @@ app.set("views",path.join(__dirname,"views"));
 
 app.use(express.static(path.join(__dirname,"public")));
 app.use(express.urlencoded({extended:true}));
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json()); 
+
+
+
 
 main()
 .catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/NeerJal');
+    await mongoose.connect(mongoUrl);
 }
 
 app.use(session(sessionOptions))
@@ -71,21 +90,17 @@ app.use((req,res,next) =>{
 
 app.use("/",data);
 app.use("/",user);
+app.use("/",admin);
 
-
-
-//admin route
-app.get("/admin",checkToken, wrapAsync(async (req,res) =>{
-    let data = await Data.find().populate("student");
-    res.render("main/show.ejs",{data})
-}));
 
 app.get("/",(req,res)=>{
     res.send("root is working")
 })
+
 app.get("*",(req,res) =>{
     throw new ExpressError(400,"Bad Request");
 })
+
 //error handling
 app.use((err,req,res,next) =>{
     let{status ="500", message ="some message"}=err;

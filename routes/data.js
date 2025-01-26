@@ -7,6 +7,8 @@ const Data =require("../model/dataSchema.js");
 const Joi = require('joi');
 const { isLoggedIn } = require("../middlewares/middleware.js");
 
+const dataControllers = require("../controllers/data.js");
+
 const date =new Date(Date.now()).toString() + 7 * 24 * 60 * 60 * 1000;
  
 
@@ -21,34 +23,14 @@ const validateData = (req,res,next) =>{
 }
 
 //main page
-router.get("/main",isLoggedIn,(req,res)=> {
-    res.render("main/index.ejs")
-})
+router.get("/main",isLoggedIn, wrapAsync(dataControllers.main))
 //profile route
-router.get("/profile",isLoggedIn,(req,res) =>{
-    const user= req.user;
-    res.render("main/profile.ejs",{user})
-});
+router.get("/profile",isLoggedIn, wrapAsync(dataControllers.profile));
 //contributions route
-router.get("/contributions",isLoggedIn, wrapAsync(async(req,res) =>{
-    const user = req.user;
-    const userContributions = await Data.find({student:user._id});
-    res.render("main/contributions.ejs", {userContributions})
-}))
+router.get("/contributions",isLoggedIn, wrapAsync(dataControllers.contributions))
 //test vedios route
-router.get("/testVedios",(req,res) =>{
-    res.render("main/testVedios.ejs")
-})
+router.get("/testVedios",wrapAsync(dataControllers.testVedios ))
 //data post route
-router.post("/main",isLoggedIn,validateData,wrapAsync( async (req,res) =>{
-    let data = req.body;
-    let user = req.user;
-    let insertData = new Data(req.body.data);
-    insertData.createdAt=date.toString();
-    insertData.student=user._id;
-    await insertData.save();
-    req.flash("siva","Data send sucessfully");
-    res.redirect("/main")
-}));
+router.post("/main",isLoggedIn,validateData,wrapAsync( dataControllers.dataPost));
 
 module.exports=router;
