@@ -92,6 +92,7 @@ app.use("/",data);
 app.use("/",user);
 app.use("/",admin);
 
+
 app.get("*",(req,res) =>{
     throw new ExpressError(400,"Bad Request");
 })
