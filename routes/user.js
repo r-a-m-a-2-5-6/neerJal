@@ -4,53 +4,23 @@ const User = require("../model/userSchema");
 const wrapAsync = require("../utils/wrapAsync");
 const passport = require("passport");
 const { savedUrl } = require("../middlewares/middleware");
-
+const userContollers = require("../controllers/user");
 
 
 //creating account 
-router.post("/signup", wrapAsync(async (req,res) =>{
-    try{
-    let {username,email,password,schoolname,city} = req.body;
-    let newUser = User({username,email,schoolname,city});
-    let registeredUser =await User.register(newUser,password);
-    req.login(registeredUser, (err) =>{
-        if(err){
-            next(err);
-        }
-        req.flash("siva","Account Created Sucessfully")
-    res.redirect("/main")
-    })}catch(err){
-        req.flash("error",err.message);
-        res.redirect("/signup")
-    }
-}))
+router.post("/signup", wrapAsync(userContollers.postSignup));
 //signup page
-router.get("/signup",(req,res) =>{
-    res.render("../users/signup.ejs")
-})
+router.get("/signup", userContollers.signup );
 
 //login page
-router.get("/login",(req,res)=>{
-    res.render("../users/login.ejs")
-})
+router.get("/login",userContollers.login);
 
 router.post('/login',savedUrl,passport.authenticate('local', ({
         failureRedirect:"/login",
         failureFlash:true
     })), 
-    wrapAsync(async (req, res, next) => {
-    req.flash("siva", "Logged in sucessfully. Welcome Back to NeerJal");
-    res.redirect(res.locals.redirectUrl)
-}))
+    wrapAsync(userContollers.postLogin));
 //logout
-router.get("/logout",(req,res,next)=>{
-    req.logout( (err) =>{
-        if(err){
-            next(err);
-        }
-    })
-    req.flash("siva","Log Out sucessfully");
-    res.redirect("/testVedios")
-})
+router.get("/logout", userContollers.logout)
 
 module.exports=router;

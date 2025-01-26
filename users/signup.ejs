@@ -1,30 +1,30 @@
 <%-layout("layouts/boilerplate")  %>
 <body>
-    <div class="row">
-        <h2 class="text-start offset-4 mt-3">Sign Up For NeerJal</h2>
-        <div class="col-8 offset-2 mb-3 mt-3">
-            <form class="col-6 offset-2" action="/signup" method="POST">
+    <div class="d-flex justify-content-center align-items-center mt-4">
+        <div class="col-12 col-md-6 col-lg-4">
+            <h2 class="text-center mb-4">Sign Up For NeerJal</h2>
+            <form action="/signup" method="POST">
                 <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" name="email" class="form-control" id="inputEmail1" >
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" name="email" class="form-control w-100" id="inputEmail1">
                 </div>
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" name="username" class="form-control" id="inputUsername">
+                    <input type="text" name="username" class="form-control w-100" id="inputUsername">
                 </div>
                 <div class="mb-3">
-                    <label for="schoolnamename" class="form-label">School Name</label>
-                    <input type="text" name="schoolname" class="form-control" id="inputSchoolName">
+                    <label for="schoolname" class="form-label">School Name</label>
+                    <input type="text" name="schoolname" class="form-control w-100" id="inputSchoolName">
                 </div>
                 <div class="mb-3">
-                    <label for="city" class="form-label">City/Village </label>
-                    <input type="text" name="city" class="form-control" id="inputcityName">
+                    <label for="city" class="form-label">City/Village</label>
+                    <input type="text" name="city" class="form-control w-100" id="inputcityName">
                 </div>
                 <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" id="inputPassword">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control w-100" id="inputPassword">
                 </div>
-                <button type="submit" class="btn btn-primary  offset-4 ">Sign Up</button>
+                <button type="submit" class="btn btn-primary w-100">Sign Up</button>
             </form>
         </div>
     </div>
