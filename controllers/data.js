@@ -2,6 +2,10 @@ const Data =require("../model/dataSchema.js");
 
 const date =new Date(Date.now()).toString() + 7 * 24 * 60 * 60 * 1000;
 
+module.exports.home=async (req,res) =>{
+    res.render("main/home.ejs")
+}
+
 module.exports.dataPost = async (req,res) =>{
     let data = req.body;
     let user = req.user;

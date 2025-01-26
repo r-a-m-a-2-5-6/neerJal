@@ -1,41 +1,45 @@
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="/home">
+      <i class="fa-solid fa-compass"></i> 
+      <span class="ms-2">NeerJal</span>
+    </a>
+    
+    <!-- Navbar toggle button for mobile view -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- Navbar items -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contributions">Contributions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/testVedios">Test Vedios</a>
+        </li>
+      </ul>
 
-
-    <nav class="navbar navbar-expand-lg bg-body-light border-bottom  sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/"><i class="fa-solid fa-compass"></i></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/main">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/profile">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contributions">Contributins</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/testVedios" >Test Vedios</a>
-            </li>
-          </ul>
-          
-          <ul class="navbar-nav">
-            <% if(!curUser) {%>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/signup">SignUp</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/login" >Log In</a>
-            </li>
-            <% } %>
-            <% if(curUser){ %>
-            <li class="nav-item">
-              <a class="nav-link" href="/logout">Log Out</a>
-            </li>
-            <% } %>
-          </ul>
-      </div>
-    </nav>
+      <!-- Auth links (SignUp, Log In, Log Out) -->
+      <ul class="navbar-nav">
+        <% if(!curUser) {%>
+        <li class="nav-item">
+          <a class="nav-link" href="/signup">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Log In</a>
+        </li>
+        <% } %>
+        <% if(curUser) { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Log Out</a>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>

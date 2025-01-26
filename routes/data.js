@@ -3,14 +3,10 @@ const router = express.Router();
 const wrapAsync = require("../utils/wrapAsync.js");
 const dataSchema= require("../schema.js");
 const ExpressError = require("../utils/ExpressError");
-const Data =require("../model/dataSchema.js");
 const Joi = require('joi');
 const { isLoggedIn } = require("../middlewares/middleware.js");
 
 const dataControllers = require("../controllers/data.js");
-
-const date =new Date(Date.now()).toString() + 7 * 24 * 60 * 60 * 1000;
- 
 
 const validateData = (req,res,next) =>{
     let {err} = dataSchema.validate(req.body);
@@ -21,7 +17,8 @@ const validateData = (req,res,next) =>{
         next();
     }
 }
-
+//home page
+router.get("/home", wrapAsync(dataControllers.home))
 //main page
 router.get("/main",isLoggedIn, wrapAsync(dataControllers.main))
 //profile route

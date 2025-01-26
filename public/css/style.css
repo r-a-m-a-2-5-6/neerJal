@@ -10,13 +10,18 @@ body{
     background-color: white;
 }
 
-.card{
-    width:22rem !important;
-}
-
 .container{
     flex: 1;
 }
 footer{
     background-color: rgba(250, 235, 215,0.2);
 }
+
+.cursor-pointer{
+    cursor: pointer;
+}
+.card-img-overlay{
+    color: rgb(255, 255, 220);
+    background-color: rgba(0, 0, 0,0.2);
+}
+
