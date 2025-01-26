@@ -1,79 +1,95 @@
+require('dotenv').config();
+
 const express = require("express");
 const app= express();
 const mongoose = require("mongoose");
 const ejsMate=require("ejs-mate");
 const path = require("path");
+const data=require("./routes/data.js");
+const user=require("./routes/user.js");
+const User= require("./model/userSchema.js");
+const session = require('express-session');
+const Data = require("./model/dataSchema");
+const ExpressError = require("./utils/ExpressError.js");
+const wrapAsync = require("./utils/wrapAsync.js");
+const {checkToken} = require("./middlewares/middleware.js");
+const {dataSchema} = require("./schema.js");
+const flash = require("connect-flash");
+const cookieParser = require("cookie-parser");
+const passport = require('passport');
+const passportLocalMongoose = require("passport-local-mongoose");
+const LocalStratergy = require("passport-local");
+const bodyParser = require('body-parser');
+
 const port = 8080;
-const Data = require("../TaskCivil/model/dataSchema");
-const ExpressError = require("../TaskCivil/Error/ExpressError.js");
-const wrapAsync = require("../TaskCivil/WrapAsync/wrapAsync.js");
-const {checkToken} = require("../TaskCivil/middlewares/middleware.js");
+const sessionOptions={
+    secret :"NeerJal",
+    resave:false,
+    saveUninitialized:true,
+    cookie:{
+        expires:Date.now() + 1000*60*60*24*3,
+        maxAge: 1000*60*60*24*3,
+        httpOnly:true
+    }
+}
+
 app.engine("ejs",ejsMate);
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 
-app.use(express.static(path.join(__dirname,"/public")));
+app.use(express.static(path.join(__dirname,"public")));
 app.use(express.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json()); 
+
 main()
-.then(()=>console.log("database is connected"))
 .catch(err => console.log(err));
 
 async function main() {
     await mongoose.connect('mongodb://127.0.0.1:27017/NeerJal');
-    
 }
 
-const date =new Date(Date.now()).toString() + 7 * 24 * 60 * 60 * 1000;
+app.use(session(sessionOptions))
+app.use(flash());
 
-//main page
-app.get("/main",(req,res)=> {
-    res.render("main/index.ejs")
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStratergy(User.authenticate()))
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+
+app.use((req,res,next) =>{
+    res.locals.siva=req.flash("siva");
+    res.locals.error=req.flash("error");
+    res.locals.curUser = req.user;
+    next();
 })
-//profile route
-app.get("/profile",(req,res) =>{
-    res.render("main/profile.ejs")
-});
-//contributions route
-app.get("/contributions",(req,res) =>{
-    res.render("main/contributions.ejs")
-})
-//test vedios route
-app.get("/testVedios",(req,res) =>{
-    res.render("main/testVedios.ejs")
-})
-//data post route
-app.post("/data",wrapAsync( async (req,res) =>{
-    console.log("post data is working");
-    let data = req.body;
-    let insertData = new Data(req.body.data);
-    insertData.createdAt=date.toString();
-   await insertData.save()
-    .catch(err =>{
-        console.log(err)
-    })
-    res.redirect("/main")
-}));
+
+app.use("/",data);
+app.use("/",user);
+
+
+
 //admin route
 app.get("/admin",checkToken, wrapAsync(async (req,res) =>{
-    let data = await Data.find();
+    let data = await Data.find().populate("student");
     res.render("main/show.ejs",{data})
 }));
-//login page
-app.get("/login",(req,res)=>{
-    res.render("../users/login.ejs")
-})
-//signup page
-app.get("/signup",(req,res) =>{
-    res.render("../users/signup.ejs")
-})
+
 app.get("/",(req,res)=>{
     res.send("root is working")
+})
+app.get("*",(req,res) =>{
+    throw new ExpressError(400,"Bad Request");
 })
 //error handling
 app.use((err,req,res,next) =>{
     let{status ="500", message ="some message"}=err;
-    res.status(status).send(message);
+    res.render("Error.ejs",{err})
 })
 
 app.listen(port,()=>{

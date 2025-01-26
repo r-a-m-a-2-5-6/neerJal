@@ -21,16 +21,21 @@
               <a class="nav-link" href="/testVedios" >Test Vedios</a>
             </li>
           </ul>
+          
           <ul class="navbar-nav">
+            <% if(!curUser) {%>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="/signup">SignUp</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/login" >Log In</a>
             </li>
+            <% } %>
+            <% if(curUser){ %>
             <li class="nav-item">
               <a class="nav-link" href="/logout">Log Out</a>
             </li>
+            <% } %>
           </ul>
       </div>
     </nav>

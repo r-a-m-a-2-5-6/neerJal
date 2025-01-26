@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 main()
-.then(()=>{console.log("database was connected")})
 .catch(err => console.log(err));
 
 async function main() {
@@ -29,6 +28,14 @@ const dataSchema = new Schema({
     createdAt:{
         type:Date,
         default:Date.now()
+    },
+    student:{
+        type:Schema.Types.ObjectId,
+        ref:"User"
+    },
+    location:{
+        type:String,
+        required:true
     }
 })
 

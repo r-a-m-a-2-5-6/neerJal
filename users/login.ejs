@@ -1,18 +1,18 @@
 <%- layout("layouts/boilerplate") %>
 <body>
     <div class="row">
-        <div class="col-6 offset-3 mb-3 ">
-            <h2 class="col-6 offset-3 mt-4 mb-2">Login For NeerJal</h2>
-            <form  method="POST" action="/login"   class="needs-validation" validate >
+        <h2 class="text-start offset-4 mt-3">Sign Up For NeerJal</h2>
+        <div class="col-8 offset-2 mb-3 mt-3">
+            <form class="col-6 offset-2" action="/login" method="POST">
                 <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="username" name="username" class="form-control" id="username" required>
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control" id="inputUsername">
                 </div>
                 <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" id="password" required>
+                <input type="password" name="password" class="form-control" id="inputPassword">
                 </div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <button type="submit" class="btn btn-primary  offset-4 ">Log In</button>
             </form>
         </div>
     </div>
