@@ -1,0 +1,14 @@
+<%- layout("layouts/boilerplate") %>
+<body>
+    <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          User Details
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"> Name :<%= user.username %></li>
+          <li class="list-group-item">School Name : <%= user.schoolname %></li>
+          <li class="list-group-item">City/Village : <%=user.city  %></li>
+          <li class="list-group-item">Email : <%=user.email%></li>
+        </ul>
+      </div>
+</body>

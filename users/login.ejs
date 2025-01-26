@@ -1,0 +1,19 @@
+<%- layout("layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <h2 class="text-start offset-4 mt-3">Log In For NeerJal</h2>
+        <div class="col-8 offset-2 mb-3 mt-3">
+            <form class="col-6 offset-2" action="/login" method="POST">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control" id="inputUsername">
+                </div>
+                <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="inputPassword">
+                </div>
+                <button type="submit" class="btn btn-primary  offset-4 ">Log In</button>
+            </form>
+        </div>
+    </div>
+</body>

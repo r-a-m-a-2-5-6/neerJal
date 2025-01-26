@@ -1,0 +1,22 @@
+.date{
+    font-size: 10px !important;
+}
+body{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+.navbar{
+    background-color: white;
+}
+
+.card{
+    width:22rem !important;
+}
+
+.container{
+    flex: 1;
+}
+footer{
+    background-color: rgba(250, 235, 215,0.2);
+}

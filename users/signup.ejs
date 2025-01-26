@@ -1,0 +1,31 @@
+<%-layout("layouts/boilerplate")  %>
+<body>
+    <div class="row">
+        <h2 class="text-start offset-4 mt-3">Sign Up For NeerJal</h2>
+        <div class="col-8 offset-2 mb-3 mt-3">
+            <form class="col-6 offset-2" action="/signup" method="POST">
+                <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control" id="inputEmail1" >
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="username" class="form-control" id="inputUsername">
+                </div>
+                <div class="mb-3">
+                    <label for="schoolnamename" class="form-label">School Name</label>
+                    <input type="text" name="schoolname" class="form-control" id="inputSchoolName">
+                </div>
+                <div class="mb-3">
+                    <label for="city" class="form-label">City/Village </label>
+                    <input type="text" name="city" class="form-control" id="inputcityName">
+                </div>
+                <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="inputPassword">
+                </div>
+                <button type="submit" class="btn btn-primary  offset-4 ">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
