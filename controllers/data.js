@@ -14,7 +14,7 @@ module.exports.dataPost = async (req,res) =>{
     insertData.student=user._id;
     await insertData.save();
     req.flash("siva","Data send sucessfully");
-    res.redirect("/main")
+    res.redirect("/home")
 };
 
 module.exports.testVedios=async(req,res) =>{
