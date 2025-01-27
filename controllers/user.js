@@ -10,7 +10,7 @@ module.exports.postSignup=async (req,res) =>{
             next(err);
         }
         req.flash("siva","Account Created Sucessfully")
-    res.redirect("/main")
+    res.redirect("/home")
     })}catch(err){
         req.flash("error",err.message);
         res.redirect("/signup")
@@ -37,5 +37,5 @@ module.exports.logout =(req,res,next)=>{
         }
     })
     req.flash("siva","Log Out sucessfully");
-    res.redirect("/testVedios")
+    res.redirect("/home")
 }
