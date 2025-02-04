@@ -1,6 +1,6 @@
 const Data =require("../model/dataSchema.js");
 
-const date =new Date(Date.now()).toString() + 7 * 24 * 60 * 60 * 1000;
+const date =new Date(Date.now());
 
 module.exports.home=async (req,res) =>{
     res.render("main/home.ejs")
@@ -10,7 +10,7 @@ module.exports.dataPost = async (req,res) =>{
     let data = req.body;
     let user = req.user;
     let insertData = new Data(req.body.data);
-    insertData.createdAt=date.toString();
+    insertData.createdAt=date;
     insertData.student=user._id;
     await insertData.save();
     req.flash("siva","Data send sucessfully");
