@@ -2,8 +2,8 @@ const User = require("../model/userSchema");
 
 module.exports.postSignup=async (req,res) =>{
     try{
-    let {username,email,password,schoolname,city} = req.body;
-    let newUser = User({username,email,schoolname,city});
+    let {username,email,password,schoolname,city,role} = req.body;
+    let newUser = User({username,email,schoolname,city,role});
     let registeredUser =await User.register(newUser,password);
     req.login(registeredUser, (err) =>{
         if(err){

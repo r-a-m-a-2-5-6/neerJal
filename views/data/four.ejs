@@ -1,0 +1,65 @@
+<section class="section-4-biodiversity">
+    <!-- Decline in Fish Population -->
+    <div class="mb-3">
+      <label class="form-label">Have you noticed a decline in fish population or other aquatic species?</label><br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="data[biodiversity][fishDecline]" id="fish-decline-yes" value="Yes" onclick="toggleVisibility('declinedSpecies', true)">
+        <label class="form-check-label" for="fish-decline-yes">Yes</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="data[biodiversity][fishDecline]" id="fish-decline-no" value="No" onclick="toggleVisibility('declinedSpecies', false)">
+        <label class="form-check-label" for="fish-decline-no">No</label>
+      </div>
+    </div>
+    <div class="mb-3" id="declinedSpecies" style="display: none;">
+      <label class="form-label" for="declined-species">If yes, which species?</label>
+      <input type="text" class="form-control" name="data[biodiversity][declinedSpecies]" id="declined-species" placeholder="Specify species">
+    </div>
+  
+    <!-- Decline in Birds or Animals -->
+    <div class="mb-3">
+      <label class="form-label">Are certain birds or animals seen less frequently around the river?</label><br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="data[biodiversity][animalDecline]" id="animal-decline-yes" value="Yes" onclick="toggleVisibility('declinedBirdsAnimals', true)">
+        <label class="form-check-label" for="animal-decline-yes">Yes</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="data[biodiversity][animalDecline]" id="animal-decline-no" value="No" onclick="toggleVisibility('declinedBirdsAnimals', false)">
+        <label class="form-check-label" for="animal-decline-no">No</label>
+      </div>
+    </div>
+    <div class="mb-3" id="declinedBirdsAnimals" style="display: none;">
+      <label class="form-label" for="declined-birds-animals">If yes, which ones?</label>
+      <input type="text" class="form-control" name="data[biodiversity][declinedBirdsAnimals]" id="declined-birds-animals" placeholder="Specify species">
+    </div>
+  
+    <!-- Illegal Activities -->
+    <div class="mb-3">
+      <label class="form-label">Do people engage in illegal fishing, sand mining, or deforestation?</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="data[biodiversity][illegalActivities]" id="illegal-yes" value="Yes" onclick="toggleVisibility('illegalImpact', true)">
+        <label class="form-check-label" for="illegal-yes">Yes</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="data[biodiversity][illegalActivities]" id="illegal-no" value="No" onclick="toggleVisibility('illegalImpact', false)">
+        <label class="form-check-label" for="illegal-no">No</label>
+      </div>
+    </div>
+    <div class="mb-3" id="illegalImpact" style="display: none;">
+      <label class="form-label" for="illegal-impact">If yes, what impact has it had?</label>
+      <input type="text" class="form-control" name="data[biodiversity][illegalImpact]" id="illegal-impact" placeholder="Describe impact">
+    </div>
+  
+    <!-- Regularly Seen Species -->
+    <div class="mb-3">
+      <label class="form-label" for="regular-species">Which types of fish, birds, animals, and aquatic plants are regularly seen here?</label>
+      <textarea class="form-control" name="data[biodiversity][regularSpecies]" id="regular-species" rows="3" placeholder="List species"></textarea>
+    </div>
+  
+    <!-- Species Disappearance -->
+    <div class="mb-3">
+      <label class="form-label" for="disappeared-species">Which species have stopped appearing over the years?</label>
+      <textarea class="form-control" name="data[biodiversity][disappearedSpecies]" id="disappeared-species" rows="3" placeholder="List species"></textarea>
+    </div>
+  </section>
+  

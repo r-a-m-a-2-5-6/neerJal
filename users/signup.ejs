@@ -1,31 +1,44 @@
 <%-layout("layouts/boilerplate")  %>
 <body>
-    <div class="d-flex justify-content-center align-items-center mt-4">
-        <div class="col-12 col-md-6 col-lg-4">
+    <div class="d-flex justify-content-center align-items-center my-4 ">
+        <div class="col-12 col-md-12 col-lg-6">
             <h2 class="text-center mb-4">Sign Up For NeerJal</h2>
-            <form action="/signup" method="POST">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email address</label>
-                    <input type="email" name="email" class="form-control w-100" id="inputEmail1">
+            <div class="row ">
+                <div class="signupImage col flex justify-content-center align-items-center">
+                    <img src="/assests/undraw_sign-in_uva0.svg" alt="signupImage" class="img-fluid">
                 </div>
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" name="username" class="form-control w-100" id="inputUsername">
-                </div>
-                <div class="mb-3">
-                    <label for="schoolname" class="form-label">School Name</label>
-                    <input type="text" name="schoolname" class="form-control w-100" id="inputSchoolName">
-                </div>
-                <div class="mb-3">
-                    <label for="city" class="form-label">City/Village</label>
-                    <input type="text" name="city" class="form-control w-100" id="inputcityName">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control w-100" id="inputPassword">
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Sign Up</button>
-            </form>
+                <form action="/signup" method="POST" class="col">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" name="email" class="form-control w-100" id="inputEmail1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" name="username" class="form-control w-100" id="inputUsername" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="schoolname" class="form-label">School Name</label>
+                        <input type="text" name="schoolname" class="form-control w-100" id="inputSchoolName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="city" class="form-label">City/Village</label>
+                        <input type="text" name="city" class="form-control w-100" id="inputcityName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Sign_up As</label>
+                        <select class="form-select" name="role"  aria-label="Default select example" required>
+                            <option selected>Open this select menu</option>
+                            <option value="Surveyer">Surveyer</option>
+                            <option value="Volunteer">Volunteer</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control w-100" id="inputPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                </form>
+            </div>
         </div>
     </div>
 </body>

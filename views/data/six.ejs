@@ -1,0 +1,55 @@
+<section class="section-6-cultural-and-livelihood">
+    <!-- a) Local Myths, Stories, or Practices -->
+    <div class="mb-3">
+      <label class="form-label" for="local-myths">Are there any local myths, stories, or traditional practices related to the river?</label>
+      <textarea class="form-control" id="local-myths" name="data[culturalAndTraditionalKnowledge][localMyths]" rows="3" placeholder="Describe here"></textarea>
+    </div>
+  
+    <!-- b) Festivals or Religious Events -->
+    <div class="mb-3">
+      <label class="form-label" for="festivals-events">Which festivals, fairs, or religious events happen near the river?</label>
+      <textarea class="form-control" id="festivals-events" name="data[culturalAndTraditionalKnowledge][festivalsEvents]" rows="3" placeholder="Mention events"></textarea>
+    </div>
+  
+    <!-- c) Changes in Traditions -->
+    <div class="mb-3">
+      <label class="form-label">Have there been any changes in these traditions due to pollution or declining water levels?</label><br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="data[culturalAndTraditionalKnowledge][traditionChanges]" value="Yes" id="changes-yes" onclick="toggleVisibility('changesDetail', true)">
+        <label class="form-check-label" for="changes-yes">Yes</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="data[culturalAndTraditionalKnowledge][traditionChanges]" value="No" id="changes-no" onclick="toggleVisibility('changesDetail', false)">
+        <label class="form-check-label" for="changes-no">No</label>
+      </div>
+    </div>
+    <div class="mb-3" id="changesDetail" style="display: none;">
+      <label class="form-label" for="tradition-changes">If yes, describe the changes:</label>
+      <textarea class="form-control" id="tradition-changes" name="data[culturalAndTraditionalKnowledge][traditionChangesDetail]" rows="3" placeholder="Describe the changes"></textarea>
+    </div>
+  
+    <!-- d) Sacred Sites -->
+    <div class="mb-3">
+      <label class="form-label">Are there sacred sites (temples, ghats, pilgrimage spots) near the river?</label><br>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="data[culturalAndTraditionalKnowledge][sacredSites]" value="Yes" id="sacred-sites-yes" onclick="toggleVisibility('sacredSitesDetail', true)">
+        <label class="form-check-label" for="sacred-sites-yes">Yes</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="data[culturalAndTraditionalKnowledge][sacredSites]" value="No" id="sacred-sites-no" onclick="toggleVisibility('sacredSitesDetail', false)">
+        <label class="form-check-label" for="sacred-sites-no">No</label>
+      </div>
+    </div>
+    <div class="mb-3" id="sacredSitesDetail" style="display: none;">
+      <label class="form-label" for="sacred-sites-detail">If yes, specify the sacred sites:</label>
+      <textarea class="form-control" id="sacred-sites-detail" name="data[culturalAndTraditionalKnowledge][sacredSitesDetail]" rows="3" placeholder="Mention the sites"></textarea>
+    </div>
+  
+    <!-- e) Cultural and Religious Importance -->
+    <div class="mb-3">
+      <label class="form-label" for="cultural-importance">How has the river been important for cultural or religious activities in your community?</label>
+      <textarea class="form-control" id="cultural-importance" name="data[culturalAndTraditionalKnowledge][culturalImportance]" rows="3" placeholder="Describe here"></textarea>
+    </div>
+  
+</section>
+  

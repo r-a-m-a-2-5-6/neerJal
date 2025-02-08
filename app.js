@@ -18,9 +18,12 @@ const {checkToken} = require("./middlewares/middleware.js");
 const {dataSchema} = require("./schema.js");
 const flash = require("connect-flash");
 const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
 const passport = require('passport');
 const passportLocalMongoose = require("passport-local-mongoose");
 const LocalStratergy = require("passport-local");
+const cloudinary = require('cloudinary').v2;
+const methodOverride = require("method-override");
 
 const port = 8080;
 
@@ -36,7 +39,7 @@ const store = MongoStore.create({
 })
 
 store.on("error" , ()=>{
-    console.log("Error is  mongoosesession ", err)
+    console.log("Error in  mongoose session ", err)
 })
 const sessionOptions={
     store,
@@ -54,7 +57,7 @@ app.engine("ejs",ejsMate);
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
-
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname,"public")));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json()); 
@@ -71,7 +74,7 @@ async function main() {
 
 app.use(session(sessionOptions))
 app.use(flash());
-
+app.use(methodOverride('_method'))
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStratergy(User.authenticate()))
@@ -85,7 +88,7 @@ app.use((req,res,next) =>{
     res.locals.siva=req.flash("siva");
     res.locals.error=req.flash("error");
     res.locals.curUser = req.user;
-    next();
+     next();
 })
 
 app.use("/",data);

@@ -1,6 +1,6 @@
 const Data =require("../model/dataSchema.js");
 
-const date =new Date(Date.now()).toString() + 7 * 24 * 60 * 60 * 1000;
+const date =new Date(Date.now()) ;
 
 module.exports.home=async (req,res) =>{
     res.render("main/home.ejs")
@@ -9,10 +9,12 @@ module.exports.home=async (req,res) =>{
 module.exports.dataPost = async (req,res) =>{
     let data = req.body;
     let user = req.user;
-    let insertData = new Data(req.body.data);
-    insertData.createdAt=date.toString();
-    insertData.student=user._id;
-    await insertData.save();
+    console.log("main is working")
+    // let insertData = new Data(req.body.data);
+    // insertData.createdAt=date;
+    // insertData.student=user._id;
+    console.log(data);
+    // await insertData.save();
     req.flash("siva","Data send sucessfully");
     res.redirect("/home")
 };
@@ -32,5 +34,24 @@ module.exports.profile = async (req,res) =>{
     res.render("main/profile.ejs",{user})
 };
 module.exports.main= async (req,res)=> {
-    res.render("main/index.ejs")
+    let user = req.user;
+    res.render("main/index.ejs", {user})
 };
+
+module.exports.editData= async (req,res) =>{
+    let {id} =req.params;
+    let data = await Data.find({});
+    let editData = data.filter(el => el._id ==id)
+    res.render("main/edit.ejs", {editData})
+};
+
+module.exports.putData= async (req,res) =>{
+    let data =req.body;
+    let {id} = req.params;
+    let updateData = await Data.findByIdAndUpdate(id,data);
+    console.log(updateData,data)
+    if(updateData){
+        req.flash("siva","Data Updated sucessfully");
+    }
+    res.redirect("/contributions")
+}

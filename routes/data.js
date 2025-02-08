@@ -5,7 +5,7 @@ const dataSchema= require("../schema.js");
 const ExpressError = require("../utils/ExpressError");
 const Joi = require('joi');
 const { isLoggedIn } = require("../middlewares/middleware.js");
-
+const methodOverride = require("method-override");
 const dataControllers = require("../controllers/data.js");
 
 const validateData = (req,res,next) =>{
@@ -28,6 +28,10 @@ router.get("/contributions",isLoggedIn, wrapAsync(dataControllers.contributions)
 //test vedios route
 router.get("/testVedios",wrapAsync(dataControllers.testVedios ))
 //data post route
-router.post("/main",isLoggedIn,validateData,wrapAsync( dataControllers.dataPost));
+router.post("/main",isLoggedIn,wrapAsync( dataControllers.dataPost));
+//data edit route
+router.get("/edit/:id",isLoggedIn,wrapAsync(dataControllers.editData))
+//put edit data
+router.put("/edit/:id",isLoggedIn,validateData, wrapAsync(dataControllers.putData));
 
 module.exports=router;

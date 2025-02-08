@@ -25,3 +25,18 @@ footer{
     background-color: rgba(0, 0, 0,0.2);
 }
 
+input:focus, textarea:focus, select:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.accordion-button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed):focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+

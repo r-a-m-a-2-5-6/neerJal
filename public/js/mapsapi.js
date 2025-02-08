@@ -29,6 +29,7 @@ const map = new mapboxgl.Map({
         const placeName = data.features[0]?.place_name || "Location not found";
         const cordinates = data.features[0]?.geometry || "Cordinates not found";
         let ram = document.querySelector('#location');
+        console.log(ram)
         ram.value=placeName;
       })
       .catch(error => {
@@ -59,3 +60,9 @@ const map = new mapboxgl.Map({
   } else {
     console.log("not supported by your browser")
   }
+
+  function toggleVisibility(sectionId, show) {
+    document.getElementById(sectionId).style.display = show ? 'block' : 'none';}
+
+
+    

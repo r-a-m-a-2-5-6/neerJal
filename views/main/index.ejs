@@ -6,40 +6,14 @@
 <body>
     <div class="map-box  mt-3" id="map" style=' height: 300px;'>
     </div>
-    <div class="details-form">
-        <div class="row">
-            <div class="lg-offset-2 col-lg-8">
-                <form action="main" method="POST" >
-                    <h2>Physical Parameters</h2>
-                    <div class="mb-3">
-                        <label class="form-label" for="color" >Colour :</label>
-                        <input type="text" class="form-control" name="data[color]" id="color" placeholder="Enter colour" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="taste">Taste :</label>
-                        <input type="text" class="form-control" name="data[taste]" id="taste" required></input>
-                    </div>
-                    <h2>Chemical Parameters</h2>
-                    <div class="mb-3">
-                        <label class="form-label" for="phValue" >ph value : </label>
-                        <input type="number" class="form-control" name="data[phValue]" id="phValue" placeholder="ph value" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="density">Density :</label>
-                        <input type="text" class="form-control" name="data[density]" id="density" required></input>
-                    </div>
-                    <!-- <div class="mb-3">
-                        <label for="formFilesm" class="form-label">Large file input example</label>
-                        <input class="form-control form-control-sm" id="formFileLg" type="file">
-                      </div> -->
-                    <div class="mb-3" >
-                        <label class="form-label" for="location">Location :</label>
-                        <input type="text" class="form-control" name="data[location]" id="location" required readonly></input>
-                    </div>
-                    <button class="btn btn-dark add-btn">Add</button>
-                </form>
-            </div>
+    <form class="details-form my-4" action="/main" method="POST">
+        <div class="accordion shadow mb-3 bg-body-tertiary rounded" id="accordionExample">
+            <%-include("../includes/accodian.ejs")  %>
+        </div >
+        <div class="button-div flex justify-content-end align-items-center">
+            <button type="submit" class="btn  btn-primary">Submit</button>
         </div>
+        </form>
     </div>
     
     <script src="/js/mapsapi.js">

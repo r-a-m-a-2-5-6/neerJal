@@ -3,7 +3,7 @@
   <div class="filters"></div>
   <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4 mt-2">
     <% for(let dataset of data){ %>
-      <div class="col">
+      <div class="card-container">
         <div class="card" >
           <div class="card-body">
             <h5 class="card-title d-flex justify-content-between">
@@ -21,7 +21,7 @@
                 Taste: <%= dataset.taste %> <br>
                 Ph Value: <%- dataset.phValue %> <br>
                 Density: <%= dataset.density %><br>
-Location :<%= dataset.location%>
+                Location :<%= dataset.location%>
               </div>
             </div>
           </div>
