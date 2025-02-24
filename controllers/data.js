@@ -26,7 +26,6 @@ module.exports.testVedios=async(req,res) =>{
 module.exports.contributions =async(req,res) =>{
     const user = req.user;
     const userContributions = await Data.find({user:user._id});
-    const contributions = userContributions.filter(el => el!= "")
     res.render("main/contributions.ejs", {userContributions})
 };
 
