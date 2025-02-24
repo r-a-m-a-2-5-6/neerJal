@@ -52,6 +52,6 @@ background: linear-gradient(0deg, rgba(244,251,252,1) 0%, rgba(228,244,252,1) 28
 
 @media screen {
     .vedio{
-        width: 80%;
+        width: 100%;
     }
 }
