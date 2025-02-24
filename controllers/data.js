@@ -1,6 +1,11 @@
 const Data =require("../model/dataSchema.js");
+<<<<<<< HEAD
 const cloudinary = require("../cloduinaryConfig.js")
 const date =new Date(Date.now()) ;
+=======
+
+const date =new Date(Date.now());
+>>>>>>> 5566ce8c1b6d26ea24da50eacb9f4d965dda85bc
 
 module.exports.home=async (req,res) =>{
     res.render("main/home.ejs")
@@ -11,9 +16,14 @@ module.exports.dataPost = async (req,res) =>{
     let user = req.user;
     console.log("main is working")
     let insertData = new Data(req.body.data);
+<<<<<<< HEAD
     insertData.date=date;
     insertData.user=user._id;
     console.log(data.data,data,req.body);
+=======
+    insertData.createdAt=date;
+    insertData.student=user._id;
+>>>>>>> 5566ce8c1b6d26ea24da50eacb9f4d965dda85bc
     await insertData.save();
     req.flash("siva","Data send sucessfully");
     res.redirect("/home")
