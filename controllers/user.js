@@ -26,8 +26,16 @@ module.exports.login = (req,res)=>{
 };
 
 module.exports.postLogin =async (req, res, next) => {
+    
+   if(res.locals.redirectUrl){
     req.flash("siva", "Logged in sucessfully. Welcome Back to NeerJal");
     res.redirect(res.locals.redirectUrl)
+    console.log(res.locals.redirectUrl)}
+    else{
+        req.flash("siva", "Logged in sucessfully. Welcome Back to NeerJal");
+        res.redirect("/home")
+    }
+    
 };
 
 module.exports.logout =(req,res,next)=>{
