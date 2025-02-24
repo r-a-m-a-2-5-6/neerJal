@@ -1,90 +1,90 @@
 <section class="section-2">
     <!-- a) Daily Water Source -->
-    <div class="mb-3">
+    <div class="mb-1">
       <label class="form-label" for="daily-water">Where does the water for daily use come from?</label>
-      <input type="text" class="form-control" name="data[general][dailyWaterSource]" id="daily-water" placeholder="Enter source">
+      <input type="text" class="form-control" name="data[dailyWaterSource]" id="daily-water" placeholder="Enter source" required>
     </div>
   
     <!-- b) Drinking Water Source -->
-    <div class="mb-3">
+    <div class="mb-1">
       <label class="form-label" for="drinking-water">Where does your drinking water come from?</label>
-      <input type="text" class="form-control" name="data[general][drinkingWaterSource]" id="drinking-water" placeholder="Enter source">
+      <input type="text" class="form-control" name="data[drinkingWaterSource]" id="drinking-water" placeholder="Enter source" required>
     </div>
   
     <!-- c) Water Treatment -->
-    <div class="mb-3">
+    <div class="mb-1">
       <label class="form-label">Does the water get treated before use?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[general][waterTreatment]" id="treated-yes" value="Yes" onclick="toggleVisibility('treatmentDetail', true)">
+        <input class="form-check-input" type="radio" name="data[waterTreatment]" id="treated-yes" value="Yes" required onclick="toggleVisibility('treatmentDetail', true)">
         <label class="form-check-label" for="treated-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[general][waterTreatment]" id="treated-no" value="No" onclick="toggleVisibility('treatmentDetail', false)">
+        <input class="form-check-input" type="radio" name="data[waterTreatment]" id="treated-no" value="No" required onclick="toggleVisibility('treatmentDetail', false)">
         <label class="form-check-label" for="treated-no">No</label>
       </div>
     </div>
-    <div class="mb-3" id="treatmentDetail" style="display: none;">
+    <div class="mb-1" id="treatmentDetail" style="display: none;">
       <label class="form-label" for="treatment-who">If yes, who treats it?</label>
-      <input type="text" class="form-control" name="data[general][treatmentEntity]" id="treatment-who" placeholder="Specify who treats the water">
+      <input type="text" class="form-control" name="data[treatmentEntity]" id="treatment-who" placeholder="Specify who treats the water">
     </div>
   
     <!-- d) Piped Water Supply -->
-    <div class="mb-3">
+    <div class="mb-1">
       <label class="form-label">Do you have piped water supply in your house?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[general][pipedWater]" value="Yes" id="piped-yes">
+        <input class="form-check-input" type="radio" name="data[pipedWater]" value="Yes" id="piped-yes" required>
         <label class="form-check-label" for="piped-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[general][pipedWater]" value="No" id="piped-no">
+        <input class="form-check-input" type="radio" name="data[pipedWater]" value="No" id="piped-no" required>
         <label class="form-check-label" for="piped-no">No</label>
       </div>
     </div>
   
     <!-- e) Water Shortages -->
-    <div class="mb-3">
+    <div class="mb-1">
       <label class="form-label">Have you faced water shortages in recent years?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[general][waterShortages]" id="shortage-yes" value="Yes" onclick="toggleVisibility('shortageSeasons', true)">
+        <input class="form-check-input" type="radio" name="data[waterShortages]" id="shortage-yes" value="Yes" required onclick="toggleVisibility('shortageSeasons', true)">
         <label class="form-check-label" for="shortage-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[general][waterShortages]" id="shortage-no" value="No" onclick="toggleVisibility('shortageSeasons', false)">
+        <input class="form-check-input" type="radio" name="data[waterShortages]" id="shortage-no" value="No" required onclick="toggleVisibility('shortageSeasons', false)">
         <label class="form-check-label" for="shortage-no">No</label>
       </div>
     </div>
-    <div class="mb-3" id="shortageSeasons" style="display: none;">
+    <div class="mb-1" id="shortageSeasons" style="display: none;">
       <label class="form-label" for="shortage-season">If yes, during which seasons?</label>
-      <input type="text" class="form-control" name="data[general][shortageSeason]" id="shortage-season" placeholder="Specify seasons">
+      <input type="text" class="form-control" name="data[shortageSeason]" id="shortage-season" placeholder="Specify seasons">
     </div>
   
     <!-- f) River Water Usage -->
-    <div class="mb-3">
+    <div class="mb-1">
       <label class="form-label" for="daily-river-use">How do you use river water in your daily life?</label>
-      <textarea class="form-control" name="data[general][dailyRiverUse]" id="daily-river-use" rows="3" placeholder="Describe usage"></textarea>
+      <textarea class="form-control" name="data[dailyRiverUse]" id="daily-river-use" rows="3" placeholder="Describe usage" required></textarea>
     </div>
   
     <!-- g) Livelihood from River -->
-    <div class="mb-3">
+    <div class="mb-1">
       <label class="form-label" for="livelihood-river">In what ways do you earn a livelihood from the river?</label>
-      <textarea class="form-control" name="data[general][riverLivelihood]" id="livelihood-river" rows="3" placeholder="Describe livelihood activities"></textarea>
+      <textarea class="form-control" name="data[riverLivelihood]" id="livelihood-river" rows="3" placeholder="Describe livelihood activities" required></textarea>
     </div>
   
     <!-- h) Payment for River Water -->
-    <div class="mb-3">
+    <div class="mb-1">
       <label class="form-label">Do you pay for using river water?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[general][riverPayment]" id="payment-yes" value="Yes" onclick="toggleVisibility('paymentDetail', true)">
+        <input class="form-check-input" type="radio" name="data[riverPayment]" id="payment-yes" value="Yes" required onclick="toggleVisibility('paymentDetail', true)">
         <label class="form-check-label" for="payment-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[general][riverPayment]" id="payment-no" value="No" onclick="toggleVisibility('paymentDetail', false)">
+        <input class="form-check-input" type="radio" name="data[riverPayment]" id="payment-no" value="No" required onclick="toggleVisibility('paymentDetail', false)">
         <label class="form-check-label" for="payment-no">No</label>
       </div>
     </div>
-    <div class="mb-3" id="paymentDetail" style="display: none;">
+    <div class="mb-1" id="paymentDetail" style="display: none;">
       <label class="form-label" for="payment-whom">If yes, whom do you pay?</label>
-      <input type="text" class="form-control" name="data[general][paymentRecipient]" id="payment-whom" placeholder="Specify payment recipient">
+      <input type="text" class="form-control" name="data[paymentRecipient]" id="payment-whom" placeholder="Specify payment recipient">
     </div>
 </section>
   

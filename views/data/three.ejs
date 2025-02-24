@@ -1,86 +1,154 @@
 <section class="sectiom-3">
     <!-- Drinking Water Usage -->
-    <div class="mb-3">
-      <label class="form-label">Do you use river water for drinking?</label><br>
+    <div class="mb-1">
+      <label class="form-label">a&#41; Do you use river water for drinking?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[waterUsage][riverDrinking]" id="drink-yes" value="Yes" onclick="toggleVisibility('drinkRemark', true)">
+        <input class="form-check-input" type="radio" name="data[riverDrinking]" id="drink-yes" value="Yes" required onclick="toggleVisibility('drinkRemark', true)">
         <label class="form-check-label" for="drink-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[waterUsage][riverDrinking]" id="drink-no" value="No" onclick="toggleVisibility('drinkRemark', false)">
+        <input class="form-check-input" type="radio" name="data[riverDrinking]" id="drink-no" value="No" required onclick="toggleVisibility('drinkRemark', false)">
         <label class="form-check-label" for="drink-no">No</label>
       </div>
     </div>
-    <div class="mb-3" id="drinkRemark" style="display: none;">
+    <div class="mb-1" id="drinkRemark" style="display: none;">
       <label class="form-label" for="drink-treatment">If yes, do you filter/treat it? If yes, how?</label>
-      <input type="text" class="form-control" name="data[waterUsage][drinkTreatment]" id="drink-treatment" placeholder="Describe treatment method">
+      <input type="text" class="form-control" name="data[drinkTreatment]" id="drink-treatment" placeholder="Describe treatment method">
     </div>
   
     <!-- Domestic Water Usage -->
-    <div class="mb-3">
-      <label class="form-label">Do you use river water for domestic purposes?</label><br>
+    <div class="mb-1">
+      <label class="form-label">b&#41; Do you use river water for domestic purposes?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[waterUsage][domesticUse]" id="domestic-yes" value="Yes" onclick="toggleVisibility('domesticPurpose', true)">
+        <input class="form-check-input" type="radio" name="data[domesticUse]" id="domestic-yes" value="Yes" required onclick="toggleVisibility('domesticPurpose', true)">
         <label class="form-check-label" for="domestic-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[waterUsage][domesticUse]" id="domestic-no" value="No" onclick="toggleVisibility('domesticPurpose', false)">
+        <input class="form-check-input" type="radio" name="data[domesticUse]" id="domestic-no" value="No" required onclick="toggleVisibility('domesticPurpose', false)">
         <label class="form-check-label" for="domestic-no">No</label>
       </div>
     </div>
-    <div class="mb-3" id="domesticPurpose" style="display: none;">
+    <div class="mb-1" id="domesticPurpose" style="display: none;">
       <label class="form-label" for="domestic-purpose">Specify purpose:</label>
-      <input type="text" class="form-control" name="data[waterUsage][domesticPurpose]" id="domestic-purpose" placeholder="Specify purpose">
+      <input type="text" class="form-control" name="data[domesticPurpose]" id="domestic-purpose" placeholder="Specify purpose">
     </div>
   
     <!-- Irrigation -->
-    <div class="mb-3">
-      <label class="form-label">Do you use river water for irrigation?</label><br>
+    <div class="mb-1">
+      <label class="form-label">c&#41; Do you use river water for irrigation?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[waterUsage][irrigation]" id="irrigation-yes" value="Yes" onclick="toggleVisibility('cropImpact', true)">
+        <input class="form-check-input" type="radio" name="data[irrigation]" id="irrigation-yes" value="Yes" required onclick="toggleVisibility('cropImpact', true)">
         <label class="form-check-label" for="irrigation-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[waterUsage][irrigation]" id="irrigation-no" value="No" onclick="toggleVisibility('cropImpact', false)">
+        <input class="form-check-input" type="radio" name="data[irrigation]" id="irrigation-no" value="No" required onclick="toggleVisibility('cropImpact', false)">
         <label class="form-check-label" for="irrigation-no">No</label>
       </div>
     </div>
-    <div class="mb-3" id="cropImpact" style="display: none;">
+    <div class="mb-1" id="cropImpact" style="display: none;">
       <label class="form-label" for="crop-impact">If yes, have there been any impacts on crop yield?</label>
-      <input type="text" class="form-control" name="data[waterUsage][cropImpact]" id="crop-impact" placeholder="Describe crop impact">
+      <input type="text" class="form-control" name="data[cropImpact]" id="crop-impact" placeholder="Describe crop impact">
     </div>
   
     <!-- Water Quality Changes -->
-    <div class="mb-3">
-      <label class="form-label">Have you noticed any changes in water quality over the past 5-10 years?</label><br>
+    <div class="mb-1">
+      <label class="form-label">d&#41; Have you noticed any changes in water quality over the past 5-10 years?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[waterUsage][waterQualityChange]" id="quality-yes" value="Yes" onclick="toggleVisibility('qualityRemark', true)">
+        <input class="form-check-input" type="radio" name="data[waterQualityChange]" id="quality-yes" value="Yes" required onclick="toggleVisibility('qualityRemark', true)">
         <label class="form-check-label" for="quality-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[waterUsage][waterQualityChange]" id="quality-no" value="No" onclick="toggleVisibility('qualityRemark', false)">
+        <input class="form-check-input" type="radio" name="data[waterQualityChange]" id="quality-no" value="No" required onclick="toggleVisibility('qualityRemark', false)">
         <label class="form-check-label" for="quality-no">No</label>
       </div>
     </div>
-    <div class="mb-3" id="qualityRemark" style="display: none;">
+    <div class="mb-1" id="qualityRemark" style="display: none;">
       <label class="form-label" for="quality-change-description">If yes, describe:</label>
-      <textarea class="form-control" name="data[waterUsage][qualityChangeDescription]" id="quality-change-description" rows="3" placeholder="Describe changes"></textarea>
+      <textarea class="form-control" name="data[qualityChangeDescription]" id="quality-change-description" rows="3" placeholder="Describe changes"></textarea>
     </div>
   
     <!-- Seasonal Changes -->
-    <div class="mb-3">
-      <label class="form-label">Does the water smell or look different in different seasons?</label><br>
+    <div class="mb-1">
+      <label class="form-label">e&#41; Does the water smell or look different in different seasons?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[waterUsage][seasonalChange]" id="seasonal-yes" value="Yes" onclick="toggleVisibility('seasonalRemark', true)">
+        <input class="form-check-input" type="radio" name="data[seasonalChange]" id="seasonal-yes" value="Yes" required onclick="toggleVisibility('seasonalRemark', true)">
         <label class="form-check-label" for="seasonal-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[waterUsage][seasonalChange]" id="seasonal-no" value="No" onclick="toggleVisibility('seasonalRemark', false)">
+        <input class="form-check-input" type="radio" name="data[seasonalChange]" id="seasonal-no" value="No" required onclick="toggleVisibility('seasonalRemark', false)">
         <label class="form-check-label" for="seasonal-no">No</label>
       </div>
     </div>
-    <div class="mb-3" id="seasonalRemark" style="display: none;">
+    <div class="mb-1" id="seasonalRemark" style="display: none;">
       <label class="form-label" for="season-description">If yes, in which season?</label>
-      <input type="text" class="form-control" name="data[waterUsage][seasonDescription]" id="season-description" placeholder="Specify season">
+      <input type="text" class="form-control" name="data[seasonDescription]" id="season-description" placeholder="Specify season">
+    </div>
+    <!-- Waterborne Diseases -->
+    <div class="mb-1">
+        <label class="form-label">f&#41; Have you or anyone in your family suffered from waterborne diseases?</label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[waterborneDisease]" value="Yes" id="disease-yes" required onclick="toggleVisibility('diseaseType', true)">
+            <label class="form-check-label" for="disease-yes">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[waterborneDisease]" value="No" id="disease-no" required onclick="toggleVisibility('diseaseType', false)">
+            <label class="form-check-label" for="disease-no">No</label>
+        </div>
+    </div>
+    <div class="mb-1" id="diseaseType" style="display: none;">
+        <label class="form-label" for="disease-types">If yes, which ones?</label>
+        <textarea class="form-control" id="disease-types" name="data[diseaseTypes]" rows="3" placeholder="Specify disease names"></textarea>
+    </div>
+
+    <!-- Dead Fish Observation -->
+     
+    <div class="mb-1">
+        <label class="form-label">g&#41; Do you observe dead fish in the river?</label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[deadFishObservation]" value="Yes" id="dead-fish-yes" required onclick="toggleVisibility('fishSeason', true)">
+            <label class="form-check-label" for="dead-fish-yes">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[deadFishObservation]" value="No" id="dead-fish-no" required onclick="toggleVisibility('fishSeason', false)">
+            <label class="form-check-label" for="dead-fish-no">No</label>
+        </div>
+    </div>
+    <div class="mb-1" id="fishSeason" style="display: none;">
+        <label class="form-label" for="fish-season">If yes, in which season?</label>
+        <textarea class="form-control" id="fish-season" name="data[fishSeason]" rows="3" placeholder="Specify season(s)"></textarea>
+    </div>
+
+    <!-- Wastewater Stream Entry -->
+    <div class="mb-1">
+        <label class="form-label">h&#41; Are you aware of any wastewater stream entering the river?</label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[wastewaterStream]" value="Yes" id="wastewater-yes" required onclick="toggleVisibility('streamLocation', true)">
+            <label class="form-check-label" for="wastewater-yes">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[wastewaterStream]" value="No" id="wastewater-no" required onclick="toggleVisibility('streamLocation', false)">
+            <label class="form-check-label" for="wastewater-no">No</label>
+        </div>
+    </div>
+    <div class="mb-1" id="streamLocation" style="display: none;">
+        <label class="form-label" for="stream-locations">If yes, please specify the location:</label>
+        <textarea class="form-control" id="stream-locations" name="data[streamLocations]" rows="3" placeholder="Specify location(s)"></textarea>
+    </div>
+
+    <!-- Industrial Waste Discharge -->
+    <div class="mb-1">
+        <label class="form-label">i&#41; Do you suspect or have evidence of industries discharging waste into the river?</label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[industryWasteEvidence]" value="Yes" id="industry-waste-yes" required onclick="toggleVisibility('industryWasteLocation', true)">
+            <label class="form-check-label" for="industry-waste-yes">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[industryWasteEvidence]" value="No" id="industry-waste-no" required onclick="toggleVisibility('industryWasteLocation', false)">
+            <label class="form-check-label" for="industry-waste-no">No</label>
+        </div>
+    </div>
+    <div class="mb-1" id="industryWasteLocation" style="display: none;">
+        <label class="form-label" for="industry-waste-locations">If yes, please specify the location:</label>
+        <textarea class="form-control" id="industry-waste-locations" name="data[industryWasteLocations]" rows="3" placeholder="Specify location(s)"></textarea>
     </div>
 </section>

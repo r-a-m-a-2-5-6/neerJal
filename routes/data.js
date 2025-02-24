@@ -28,7 +28,7 @@ router.get("/contributions",isLoggedIn, wrapAsync(dataControllers.contributions)
 //test vedios route
 router.get("/testVedios",wrapAsync(dataControllers.testVedios ))
 //data post route
-router.post("/main",isLoggedIn,wrapAsync( dataControllers.dataPost));
+router.post("/main",isLoggedIn,validateData,wrapAsync( dataControllers.dataPost));
 //data edit route
 router.get("/edit/:id",isLoggedIn,wrapAsync(dataControllers.editData))
 //put edit data

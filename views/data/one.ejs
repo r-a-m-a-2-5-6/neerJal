@@ -4,36 +4,36 @@
     <!-- Surveyor Name -->
     <div class="mb-1">
         <label class="form-label" for="surveyor-name">Surveyor Name:</label>
-        <input type="text" class="form-control" name="data[userDetails][surveyorName]" value="<%=user.username %>" id="surveyor-name" readonly placeholder="Enter Surveyor Name" required>
+        <input type="text" class="form-control" name="data[surveyorName]" value="<%=user.username %>" id="surveyor-name" readonly placeholder="Enter Surveyor Name" required>
     </div>
     <div class="mb-1">
         <label class="form-label" for="respondent-name">Respondent Name (Voluntary):</label>
-        <input type="text" class="form-control" name="data[userDetails][respondentName]" id="respondent-name" placeholder="Enter Respondent Name">
+        <input type="text" class="form-control" name="data[respondentName]" id="respondent-name" placeholder="Enter Respondent Name">
     </div>
     <% } %>
     <% if(user.role =="Volunteer"){ %>
     <!-- Respondent Name (Voluntary) -->
     <div class="mb-1">
         <label class="form-label" for="respondent-name">Respondent Name (Voluntary):</label>
-        <input type="text" class="form-control" name="data[userDetails][respondentName]" value="<%=user.username  %>" readonly id="respondent-name" placeholder="Enter Respondent Name">
+        <input type="text" class="form-control" name="data[respondentName]" value="<%=user.username  %>" readonly id="respondent-name" placeholder="Enter Respondent Name">
     </div>
     <% } %>
     <!-- Village/Town -->
     <div class="mb-1">
         <label class="form-label" for="village-town">Village/Town:</label>
-        <input type="text" class="form-control" name="data[userDetails][villageTown]" id="village-town" placeholder="Enter Village or Town" required>
+        <input type="text" class="form-control" name="data[villageTown]" id="village-town" placeholder="Enter Village or Town" required>
     </div>
     
     <!-- Occupation -->
     <div class="mb-1">
         <label class="form-label" for="occupation">Occupation:</label>
-        <input type="text" class="form-control" name="data[userDetails][occupation]" id="occupation" placeholder="Enter Occupation" required>
+        <input type="text" class="form-control" name="data[occupation]" id="occupation" placeholder="Enter Occupation" required>
     </div>
     
     <!-- Gender -->
     <div class="mb-1">
         <label class="form-label" for="gender">Gender:</label>
-        <select class="form-control" name="data[userDetails][gender]" id="gender" required>
+        <select class="form-control" name="data[gender]" id="gender" required>
         <option value="">Select Gender</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
@@ -44,24 +44,24 @@
     <!-- Age -->
     <div class="mb-1">
         <label class="form-label" for="age">Age:</label>
-        <input type="number" class="form-control" name="data[userDetails][age]" id="age" placeholder="Enter Age" min="0" max="120" required>
+        <input type="number" class="form-control" name="data[age]" id="age" placeholder="Enter Age" min="0" max="120" required>
     </div>
      <!-- Location -->
-     <div class="mb-1">
+     <div class="mb-1" style="display: none;">
         <label class="form-label" for="location">Location:</label>
-        <input type="text" class="form-control" name="data[userDetails][location]" id="location" readonly required>
+        <input type="text" class="form-control" name="data[location]" id="location" readonly required>
     </div>
     
     <!-- Educational Qualification -->
     <div class="mb-1">
         <label class="form-label" for="qualification">Educational Qualification:</label>
-        <input type="text" class="form-control" name="data[userDetails][qualification]" id="qualification" placeholder="Enter Qualification" required>
+        <input type="text" class="form-control" name="data[qualification]" id="qualification" placeholder="Enter Qualification" required>
     </div>
     
     <!-- Employment -->
     <div class="mb-1">
-        <label class="form-label" for="employment">Employment Status:</label>
-        <select class="form-control" name="data[userDetails][employment]" id="employment">
+        <label class="form-label" for="employment" >Employment Status:</label>
+        <select class="form-control" name="data[employment]" id="employment" required>
         <option value="">Select Employment Status</option>
         <option value="Employed">Employed</option>
         <option value="Unemployed">Unemployed</option>

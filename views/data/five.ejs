@@ -3,31 +3,31 @@
     <div class="mb-3">
       <label class="form-label">In what ways do you earn a livelihood from the river?</label><br>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="data[socioEconomicAndLivelihood][livelihoodOptions][]" value="Fishing" id="fishing">
+        <input class="form-check-input" type="checkbox" name="data[livelihoodOptions]" required value="Fishing" id="fishing">
         <label class="form-check-label" for="fishing">Fishing</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="data[socioEconomicAndLivelihood][livelihoodOptions][]" value="Agriculture" id="agriculture">
+        <input class="form-check-input" type="checkbox" name="data[livelihoodOptions]" required value="Agriculture" id="agriculture">
         <label class="form-check-label" for="agriculture">Agriculture</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="data[socioEconomicAndLivelihood][livelihoodOptions][]" value="Sand mining" id="sand-mining">
+        <input class="form-check-input" type="checkbox" name="data[livelihoodOptions]" required value="Sand mining" id="sand-mining">
         <label class="form-check-label" for="sand-mining">Sand mining</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="data[socioEconomicAndLivelihood][livelihoodOptions][]" value="Tourism" id="tourism">
+        <input class="form-check-input" type="checkbox" name="data[livelihoodOptions]" required value="Tourism" id="tourism">
         <label class="form-check-label" for="tourism">Tourism</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="data[socioEconomicAndLivelihood][livelihoodOptions][]" value="Transportation" id="transportation">
+        <input class="form-check-input" type="checkbox" name="data[livelihoodOptions]" required value="Transportation" id="transportation">
         <label class="form-check-label" for="transportation">Transportation</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="data[socioEconomicAndLivelihood][livelihoodOptions][]" value="Other" id="other-livelihood" onclick="toggleVisibility('otherLivelihoodDetail', this.checked)">
+        <input class="form-check-input" type="checkbox" name="data[livelihoodOptions]" required value="Other" id="other-livelihood" onclick="toggleVisibility('otherLivelihoodDetail', this.checked)">
         <label class="form-check-label" for="other-livelihood">Other</label>
       </div>
       <div class="mt-2" id="otherLivelihoodDetail" style="display: none;">
-        <input type="text" class="form-control" name="data[socioEconomicAndLivelihood][otherLivelihoodDetail]" placeholder="Please specify">
+        <input type="text" class="form-control" name="data[otherLivelihoodDetail]" placeholder="Please specify">
       </div>
     </div>
   
@@ -35,22 +35,22 @@
     <div class="mb-3">
       <label class="form-label">Is fishing an important livelihood in your area?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[socioEconomicAndLivelihood][fishingImportance]" value="Yes" id="fishing-yes" onclick="toggleVisibility('fishingCatchDetail', true)">
+        <input class="form-check-input" type="radio" name="data[fishingImportance]" value="Yes" id="fishing-yes" onclick="toggleVisibility('fishingCatchDetail', true)" required>
         <label class="form-check-label" for="fishing-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[socioEconomicAndLivelihood][fishingImportance]" value="No" id="fishing-no" onclick="toggleVisibility('fishingCatchDetail', false)">
+        <input class="form-check-input" type="radio" name="data[fishingImportance]" value="No" id="fishing-no" onclick="toggleVisibility('fishingCatchDetail', false)" required>
         <label class="form-check-label" for="fishing-no">No</label>
       </div>
     </div>
     <div class="mb-3" id="fishingCatchDetail" style="display: none;">
       <label class="form-label">If yes, has the catch decreased?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[socioEconomicAndLivelihood][catchDecrease]" value="Yes" id="catch-yes">
+        <input class="form-check-input" type="radio" name="data[catchDecrease]" value="Yes" id="catch-yes">
         <label class="form-check-label" for="catch-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[socioEconomicAndLivelihood][catchDecrease]" value="No" id="catch-no">
+        <input class="form-check-input" type="radio" name="data[catchDecrease]" value="No" id="catch-no">
         <label class="form-check-label" for="catch-no">No</label>
       </div>
     </div>
@@ -58,13 +58,13 @@
     <!-- c) Impact on Earnings -->
     <div class="mb-3">
       <label class="form-label" for="earnings-impact">Have any changes in the river’s condition affected your earnings? If yes, how?</label>
-      <textarea class="form-control" name="data[socioEconomicAndLivelihood][earningsImpact]" id="earnings-impact" rows="3" placeholder="Describe the impact"></textarea>
+      <textarea class="form-control" name="data[earningsImpact]" id="earnings-impact" rows="3" placeholder="Describe the impact" required></textarea>
     </div>
   
     <!-- d) Impact on Local Businesses -->
     <div class="mb-3">
       <label class="form-label" for="business-impact">Has water pollution affected local businesses? If yes, how?</label>
-      <textarea class="form-control" name="data[socioEconomicAndLivelihood][businessImpact]" id="business-impact" rows="3" placeholder="Describe the impact"></textarea>
+      <textarea class="form-control" name="data[businessImpact]" id="business-impact" rows="3" placeholder="Describe the impact" required></textarea>
     </div>
   
    

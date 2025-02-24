@@ -2,33 +2,35 @@
     <!-- Photographs Section -->
     <div class="mb-3">
         <label class="form-label">Photographs of water quality, waste dumping, biodiversity</label>
-        <div>
-            <input type="radio" name="data[visualAndDocumentation][photographsCompleted]" value="Yes" 
-                   id="photographsYes" onclick="toggleVisibility('photographsRemarks', true)">
-            <label for="photographsYes">Yes</label>
-            
-            <input type="radio" name="data[visualAndDocumentation][photographsCompleted]" value="No" 
-                   id="photographsNo" onclick="toggleVisibility('photographsRemarks', false)">
-            <label for="photographsNo">No</label>
+        <div class="form-check-inline form-check">
+            <input class="form-check-input" type="radio" name="data[photographsCompleted]" value="Yes" 
+                   id="photographsYes" required onclick="toggleVisibility('photographsRemarks', true)">
+            <label class="form-check-label" for="photographsYes">Yes</label>
+        </div> 
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[photographsCompleted]" value="No" 
+                   id="photographsNo" required onclick="toggleVisibility('photographsRemarks', false)">
+            <label class="form-check-label" for="photographsNo">No</label>
         </div>
-        <textarea class="form-control mt-2" name="data[visualAndDocumentation][photographsRemarks]" 
+        </div> 
+        <textarea class="form-control mt-2" name="data[photographsRemarks]" 
                   rows="3" id="photographsRemarks" style="display: none;" 
                   placeholder="Provide any relevant remarks or details"></textarea>
-    </div>
 
     <!-- Video Interviews Section -->
     <div class="mb-3">
         <label class="form-label">Video interviews with locals</label>
-        <div>
-            <input type="radio" name="data[visualAndDocumentation][videoInterviewsCompleted]" value="Yes" 
-                   id="videoInterviewsYes" onclick="toggleVisibility('videoInterviewsRemarks', true)">
-            <label for="videoInterviewsYes">Yes</label>
-            
-            <input type="radio" name="data[visualAndDocumentation][videoInterviewsCompleted]" value="No" 
-                   id="videoInterviewsNo" onclick="toggleVisibility('videoInterviewsRemarks', false)">
-            <label for="videoInterviewsNo">No</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[videoInterviewsCompleted]" value="Yes" 
+                   id="videoInterviewsYes" required onclick="toggleVisibility('videoInterviewsRemarks', true)">
+            <label class="form-check-label" for="videoInterviewsYes">Yes</label>
         </div>
-        <textarea class="form-control mt-2" name="data[visualAndDocumentation][videoInterviewsRemarks]" 
+        <div class="form-check-inline form-check">
+            <input class="form-check-input" type="radio" name="data[videoInterviewsCompleted]" value="No" 
+                   id="videoInterviewsNo" required onclick="toggleVisibility('videoInterviewsRemarks', false)">
+            <label class="form-check-label" for="videoInterviewsNo">No</label>
+        </div>
+        <textarea class="form-control mt-2" name="data[videoInterviewsRemarks]" 
                   rows="3" id="videoInterviewsRemarks" style="display: none;" 
                   placeholder="Provide any relevant remarks or details"></textarea>
     </div>

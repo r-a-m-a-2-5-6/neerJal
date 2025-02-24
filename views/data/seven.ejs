@@ -1,68 +1,109 @@
 <section class="section-7-wastewater-management">
+   
+
+    <!-- Household Wastewater Disposal -->
+    <div class="mb-1">
+        <label class="form-label">Where does household wastewater usually go?</label><br>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="data[wastewaterDisposal]" required value="Sewer system" id="sewer-system">
+            <label class="form-check-label" for="sewer-system">Sewer system</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="data[wastewaterDisposal]" required value="Open drains" id="open-drains">
+            <label class="form-check-label" for="open-drains">Open drains</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="data[wastewaterDisposal]" required value="Septic tanks" id="septic-tanks">
+            <label class="form-check-label" for="septic-tanks">Septic tanks</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="data[wastewaterDisposal]" required value="Directly into the river" id="direct-river">
+            <label class="form-check-label" for="direct-river">Directly into the river</label>
+        </div>
+    </div>
+
     <!-- Drainage System -->
     <div class="mb-3">
         <label class="form-label">Is there a proper drainage system in your locality?</label><br>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="drainageSystem" value="Yes" id="drainage-yes" onclick="toggleVisibility('sacredSitesDetail', true)" data-bs-toggle="collapse" data-bs-target="#drainageMaintenance">
+            <input class="form-check-input" type="radio" name="data[drainageSystem]" value="Yes" id="drainage-yes" required onclick="toggleVisibility('drainageMaintenance', true)">
             <label class="form-check-label" for="drainage-yes">Yes</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="drainageSystem" value="No" id="drainage-no" onclick="toggleVisibility('sacredSitesDetail', false)" data-bs-toggle="collapse" data-bs-target="#drainageMaintenance" aria-expanded="false">
+            <input class="form-check-input" type="radio" name="data[drainageSystem]" value="No" id="drainage-no" required onclick="toggleVisibility('drainageMaintenance', false)">
             <label class="form-check-label" for="drainage-no">No</label>
         </div>
     </div>
-    <div class="collapse" id="drainageMaintenance">
-        <div class="mb-3">
-            <label class="form-label">If yes, is it well-maintained?</label><br>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="maintenance" value="Yes" id="maintenance-yes">
-                <label class="form-check-label" for="maintenance-yes">Yes</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="maintenance" value="No" id="maintenance-no">
-                <label class="form-check-label" for="maintenance-no">No</label>
-            </div>
+    <div class="mb-3" id="drainageMaintenance" style="display: none;">
+        <label class="form-label">If yes, is it well-maintained?</label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[maintenance]" value="Yes" id="maintenance-yes">
+            <label class="form-check-label" for="maintenance-yes">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[maintenance]" value="No" id="maintenance-no">
+            <label class="form-check-label" for="maintenance-no">No</label>
+        </div>
+    </div>
+     <!-- Sewage Treatment Plants (STPs) -->
+     <div class="mb-3">
+        <label class="form-label">Are there any sewage treatment plants (STPs) in the area?</label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[stpsAvailable]" value="Yes" id="stps-yes" required onclick="toggleVisibility('stpFunctional', true)">
+            <label class="form-check-label" for="stps-yes">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[stpsAvailable]" value="No" id="stps-no" required onclick="toggleVisibility('stpFunctional', false)">
+            <label class="form-check-label" for="stps-no">No</label>
+        </div>
+    </div>
+    <div class="mb-3" id="stpFunctional" style="display: none;">
+        <label class="form-label">If yes, are they functional?</label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[stpsFunctional]" value="Yes" id="stps-functional-yes">
+            <label class="form-check-label" for="stps-functional-yes">Yes</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[stpsFunctional]" value="No" id="stps-functional-no">
+            <label class="form-check-label" for="stps-functional-no">No</label>
         </div>
     </div>
 
-    <!-- Household Wastewater Disposal -->
+    <!-- Industrial Wastewater Treatment -->
     <div class="mb-3">
-        <label class="form-label">Where does household wastewater usually go?</label><br>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="wastewaterDisposal" value="Sewer system" id="sewer-system">
-            <label class="form-check-label" for="sewer-system">Sewer system</label>
+        <label class="form-label">Does wastewater from industries near the river get treated before discharge?</label><br>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[industryWasteTreatment]" value="Yes" id="industry-treatment-yes" required onclick="toggleVisibility('treatmentMethods', true)">
+            <label class="form-check-label" for="industry-treatment-yes">Yes</label>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="wastewaterDisposal" value="Open drains" id="open-drains">
-            <label class="form-check-label" for="open-drains">Open drains</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[industryWasteTreatment]" value="No" id="industry-treatment-no" required onclick="toggleVisibility('treatmentMethods', false)">
+            <label class="form-check-label" for="industry-treatment-no">No</label>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="wastewaterDisposal" value="Septic tanks" id="septic-tanks">
-            <label class="form-check-label" for="septic-tanks">Septic tanks</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="data[industryWasteTreatment]" value="Don’t Know" id="industry-treatment-dk" required onclick="toggleVisibility('treatmentMethods', false)">
+            <label class="form-check-label" for="industry-treatment-dk">Don’t Know</label>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="wastewaterDisposal" value="Directly into the river" id="direct-river">
-            <label class="form-check-label" for="direct-river">Directly into the river</label>
-        </div>
+    </div>
+    <div class="mb-3" id="treatmentMethods" style="display: none;">
+        <label class="form-label" for="treatment-method">If yes, what treatment methods are used?</label>
+        <textarea class="form-control" id="treatment-method" name="data[treatmentMethods]" rows="3" placeholder="Mention treatment methods"></textarea>
     </div>
 
     <!-- Untreated Sewage Discharge -->
     <div class="mb-3">
         <label class="form-label">Have you noticed untreated sewage or industrial wastewater being discharged into the river?</label><br>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="sewageDischarge" value="Yes" id="sewage-yes" onclick="toggleVisibility('sacredDetail', true)" data-bs-toggle="collapse" data-bs-target="#dischargeLocation">
+            <input class="form-check-input" type="radio" name="data[sewageDischarge]" value="Yes" id="sewage-yes" required onclick="toggleVisibility('dischargeLocation', true)">
             <label class="form-check-label" for="sewage-yes">Yes</label>
         </div>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="sewageDischarge" value="No" id="sewage-no" onclick="toggleVisibility('sacredDetail', false)" data-bs-toggle="collapse" data-bs-target="#dischargeLocation" aria-expanded="false">
+            <input class="form-check-input" type="radio" name="data[sewageDischarge]" value="No" id="sewage-no" required onclick="toggleVisibility('dischargeLocation', false)">
             <label class="form-check-label" for="sewage-no">No</label>
         </div>
     </div>
-    <div class="collapse" id="dischargeLocation">
-        <div class="mb-3">
-            <label class="form-label" for="discharge-location">If yes, specify locations or sources:</label>
-            <textarea class="form-control" id="discharge-location" name="dischargeLocations" rows="3" placeholder="Mention locations or sources"></textarea>
-        </div>
+    <div class="mb-3" id="dischargeLocation" style="display: none;">
+        <label class="form-label" for="discharge-locations">If yes, specify locations or sources:</label>
+        <textarea class="form-control" id="discharge-locations" name="data[dischargeLocations]" rows="3" placeholder="Mention locations or sources"></textarea>
     </div>
-
 </section>

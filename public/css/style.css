@@ -39,4 +39,19 @@ input:focus, textarea:focus, select:focus {
     outline: none !important;
     box-shadow: none !important;
 }
+.test-div-testvedios{
+background: rgb(244,251,252);
+background: linear-gradient(0deg, rgba(244,251,252,1) 0%, rgba(228,244,252,1) 28%, rgba(236,244,252,1) 50%, rgba(255,255,255,1) 100%);
+}
 
+.vedio{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media screen {
+    .vedio{
+        width: 80%;
+    }
+}

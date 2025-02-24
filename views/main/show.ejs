@@ -7,21 +7,118 @@
         <div class="card" >
           <div class="card-body">
             <h5 class="card-title d-flex justify-content-between">
-              <span><%= dataset.student.username %></span>
+              <span><%= dataset.user.username %></span>
               <div class="d-inline-flex gap-1">
                 <i class="fas fa-angle-down cursor-pointer" data-bs-toggle="collapse" data-bs-target="#collapse<%= dataset._id %>" aria-expanded="false" aria-controls="collapse<%= dataset._id %>"></i>
               </div>
             </h5>
-            <p class="date mb-2"><%= dataset.createdAt %></p>
+            <p class="date mb-2"><%= dataset.date %></p>
             
             <!-- Collapsible Content -->
             <div class="collapse" id="collapse<%= dataset._id %>">
               <div class="card card-body">
-                Color: <%= dataset.color %> <br>
-                Taste: <%= dataset.taste %> <br>
-                Ph Value: <%- dataset.phValue %> <br>
-                Density: <%= dataset.density %><br>
-                Location :<%= dataset.location%>
+                <ol>
+                  <li>Respondent name: <%= dataset.respondentName %></li>
+                  <li>Village/town: <%= dataset.villageTown %></li>
+                  <li>Occupation: <%= dataset.occupation %></li>
+                  <li>Gender: <%= dataset.gender %></li>
+                  <li>Age: <%= dataset.age %></li>
+                  <li>Location: <%= dataset.location %></li>
+                  <li>Qualification: <%= dataset.qualification %></li>
+                  <li>Employment: <%= dataset.employment %></li>
+                  <li>Daily water source: <%= dataset.dailyWaterSource %></li>
+                  <li>Water treatment: <%= dataset.waterTreatment %></li>
+                  <li>Treatment entity: <%= dataset.treatmentEntity %></li>
+                  <li>Piped water: <%= dataset.pipedWater %></li>
+                  <li>Water shortages: <%= dataset.waterShortages %></li>
+                  <li>Shortage season: <%= dataset.shortageSeason %></li>
+                  <li>Daily river use: <%= dataset.dailyRiverUse %></li>
+                  <li>River livelihood: <%= dataset.riverLivelihood %></li>
+                  <li>River payment: <%= dataset.riverPayment %></li>
+                  <li>Payment recipient: <%= dataset.paymentRecipient %></li>
+                  <li>River drinking: <%= dataset.riverDrinking %></li>
+                  <li>Drink treatment: <%= dataset.drinkTreatment %></li>
+                  <li>Domestic use: <%= dataset.domesticUse %></li>
+                  <li>Domestic purpose: <%= dataset.domesticPurpose %></li>
+                  <li>Irrigation: <%= dataset.irrigation %></li>
+                  <li>Crop impact: <%= dataset.cropImpact %></li>
+                  <li>Water quality change: <%= dataset.waterQualityChange %></li>
+                  <li>Quality change description: <%= dataset.qualityChangeDescription %></li>
+                  <li>Seasonal change: <%= dataset.seasonalChange %></li>
+                  <li>Season description: <%= dataset.seasonDescription %></li>
+                  <li>Waterborne disease: <%= dataset.waterborneDisease %></li>
+                  <li>Disease types: <%= dataset.diseaseTypes %></li>
+                  <li>Dead fish observation: <%= dataset.deadFishObservation %></li>
+                  <li>Fish season: <%= dataset.fishSeason %></li>
+                  <li>Wastewater stream: <%= dataset.wastewaterStream %></li>
+                  <li>Stream locations: <%= dataset.streamLocations %></li>
+                  <li>Industry waste evidence: <%= dataset.industryWasteEvidence %></li>
+                  <li>Industry waste locations: <%= dataset.industryWasteLocations %></li>
+                  <li>Fish decline: <%= dataset.fishDecline %></li>
+                  <li>Declined species: <%= dataset.declinedSpecies %></li>
+                  <li>Animal decline: <%= dataset.animalDecline %></li>
+                  <li>Declined birds/animals: <%= dataset.declinedBirdsAnimals %></li>
+                  <li>Illegal activities: <%= dataset.illegalActivities %></li>
+                  <li>Illegal impact: <%= dataset.illegalImpact %></li>
+                  <li>Regular species: <%= dataset.regularSpecies %></li>
+                  <li>Disappeared species: <%= dataset.disappearedSpecies %></li>
+              
+                  <li>Livelihood options: <%= dataset.livelihoodOptions.join(', ') %></li>
+                  <li>Other livelihood detail: <%= dataset.otherLivelihoodDetail %></li>
+                  <li>Fishing importance: <%= dataset.fishingImportance %></li>
+                  <li>Earnings impact: <%= dataset.earningsImpact %></li>
+                  <li>Business impact: <%= dataset.businessImpact %></li>
+                  <li>Local myths: <%= dataset.localMyths %></li>
+                  <li>Festivals/events: <%= dataset.festivalsEvents %></li>
+                  <li>Tradition changes: <%= dataset.traditionChanges %></li>
+                  <li>Tradition changes detail: <%= dataset.traditionChangesDetail %></li>
+                  <li>Sacred sites: <%= dataset.sacredSites %></li>
+                  <li>Sacred sites detail: <%= dataset.sacredSitesDetail %></li>
+                  <li>Cultural importance: <%= dataset.culturalImportance %></li>
+              
+                  <li>Wastewater disposal: <%= dataset.wastewaterDisposal.join(', ') %></li>
+                  <li>Drainage system: <%= dataset.drainageSystem %></li>
+                  <li>Maintenance: <%= dataset.maintenance %></li>
+                  <li>STPs available: <%= dataset.stpsAvailable %></li>
+                  <li>Industry waste treatment: <%= dataset.industryWasteTreatment %></li>
+                  <li>Treatment methods: <%= dataset.treatmentMethods %></li>
+                  <li>Sewage discharge: <%= dataset.sewageDischarge %></li>
+                  <li>Discharge locations: <%= dataset.dischargeLocations %></li>
+              
+                  <li>Household waste: 
+                      <ul>
+                          <% dataset.householdWaste.forEach(function(item) { %>
+                              <li><%= item %></li>
+                          <% }) %>
+                      </ul>
+                  </li>
+                  <li>Garbage collection: <%= dataset.garbageCollection %></li>
+                  <li>Waste segregation: <%= dataset.wasteSegregation %></li>
+                  <li>Categories: <%= dataset.categories %></li>
+                  <li>Plastic waste: <%= dataset.plasticWaste %></li>
+                  <li>Sources: <%= dataset.sources %></li>
+                  <li>Market waste: <%= dataset.marketWaste %></li>
+                  <li>waste type: <%= dataset.wasteType %></li>
+                  <li>Waste facility: <%= dataset.wasteFacility %></li>
+                  <li>Aware: <%= dataset.awareness %></li>
+                  <li>Campaign details: <%= dataset.campaignDetails %></li>
+                  <li>Illegal dumping: <%= dataset.illegalDumping %></li>
+                  <li>Dumping locations: <%= dataset.dumpingLocations %></li>
+                  <li>Waste collection status: <%= dataset.wasteCollectionStatus %></li>
+                  <li>River challenges: <%= dataset.riverChallenges %></li>
+                  <li>Improvement actions: <%= dataset.improvementActions %></li>
+                  <li>Pollution sources: <%= dataset.pollutionSources %></li>
+                  <li>Gov programs awareness: <%= dataset.govProgramsAwareness %></li>
+                  <li>Local initiatives: <%= dataset.localInitiatives %></li>
+                  <li>Willingness participation: <%= dataset.willingnessParticipation %></li>
+                  <li>Photographs completed: <%= dataset.photographsCompleted %></li>
+                  <li>Photographs remarks: <%= dataset.photographsRemarks %></li>
+                  <li>Video interviews completed: <%= dataset.videoInterviewsCompleted %></li>
+                  <li>Video interviews remarks: <%= dataset.videoInterviewsRemarks %></li>
+                  <li>Contact name: <%= dataset.contactName %></li>
+                  <li>Contact phone: <%= dataset.contactPhone %></li>
+                  <li>Regular updates: <%= dataset.regularUpdates %></li>
+              </ol>
               </div>
             </div>
           </div>

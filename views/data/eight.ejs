@@ -3,23 +3,23 @@
     <div class="mb-3">
       <label class="form-label">How is household waste disposed of in your community?</label><br>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="data[solidwastemanagement][householdWaste]" value="Municipal collection" id="waste-municipal">
+        <input class="form-check-input" type="checkbox" name="data[householdWaste]" value="Municipal collection" id="waste-municipal" required>
         <label class="form-check-label" for="waste-municipal">Municipal collection</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="data[solidwastemanagement][householdWaste]" value="Dumped in open spaces" id="waste-open-dump">
+        <input class="form-check-input" type="checkbox" name="data[householdWaste]" value="Dumped in open spaces" id="waste-open-dump" required>
         <label class="form-check-label" for="waste-open-dump">Dumped in open spaces</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="data[solidwastemanagement][householdWaste]" value="Burned" id="waste-burned">
+        <input class="form-check-input" type="checkbox" name="data[householdWaste]" value="Burned" id="waste-burned" required>
         <label class="form-check-label" for="waste-burned">Burned</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="data[solidwastemanagement][householdWaste]" value="Thrown into the river" id="waste-river">
+        <input class="form-check-input" type="checkbox" name="data[householdWaste]" value="Thrown into the river" id="waste-river" required>
         <label class="form-check-label" for="waste-river">Thrown into the river</label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="data[solidwastemanagement][householdWaste]" value="Other" id="waste-other">
+        <input class="form-check-input" type="checkbox" name="data[householdWaste]" value="Other" id="waste-other" required>
         <label class="form-check-label" for="waste-other">Other</label>
       </div>
     </div>
@@ -28,22 +28,22 @@
     <div class="mb-3">
       <label class="form-label">Are there designated garbage collection points in your area?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[solidwastemanagement][garbageCollection]" id="garbage-yes" value="Yes" onclick="toggleVisibility('regularClearing', true)">
+        <input class="form-check-input" type="radio" name="data[garbageCollection]" id="garbage-yes" value="Yes" onclick="toggleVisibility('regularClearing', true)" required>
         <label class="form-check-label" for="garbage-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[solidwastemanagement][garbageCollection]" id="garbage-no" value="No" onclick="toggleVisibility('regularClearing', false)">
+        <input class="form-check-input" type="radio" name="data[garbageCollection]" id="garbage-no" value="No" onclick="toggleVisibility('regularClearing', false)" required>
         <label class="form-check-label" for="garbage-no">No</label>
       </div>
     </div>
     <div class="mb-3" id="regularClearing" style="display: none;">
       <label class="form-label">If yes, are they regularly cleared?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[solidwastemanagement][regularClearing]" id="cleared-yes" value="Yes">
+        <input class="form-check-input" type="radio" name="data[regularClearing]" id="cleared-yes" value="Yes">
         <label class="form-check-label" for="cleared-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[solidwastemanagement][regularClearing]" id="cleared-no" value="No">
+        <input class="form-check-input" type="radio" name="data[regularClearing]" id="cleared-no" value="No">
         <label class="form-check-label" for="cleared-no">No</label>
       </div>
     </div>
@@ -52,73 +52,73 @@
     <div class="mb-3">
       <label class="form-label">Do you segregate waste at home?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[solidwastemanagement][wasteSegregation]" id="segregation-yes" value="Yes" onclick="toggleVisibility('segregationCategories', true)">
+        <input class="form-check-input" type="radio" name="data[wasteSegregation]" id="segregation-yes" value="Yes" onclick="toggleVisibility('segregationCategories', true)" required>
         <label class="form-check-label" for="segregation-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[solidwastemanagement][wasteSegregation]" id="segregation-no" value="No" onclick="toggleVisibility('segregationCategories', false)">
+        <input class="form-check-input" type="radio" name="data[wasteSegregation]" id="segregation-no" value="No" onclick="toggleVisibility('segregationCategories', false)" required>
         <label class="form-check-label" for="segregation-no">No</label>
       </div>
     </div>
     <div class="mb-3" id="segregationCategories" style="display: none;">
       <label class="form-label" for="categories">If yes, what categories?</label>
-      <input type="text" class="form-control" name="data[solidwastemanagement][categories]" id="categories" placeholder="Enter categories">
+      <input type="text" class="form-control" name="data[categories]" id="categories" placeholder="Enter categories">
     </div>
   
     <!-- Plastic Waste -->
     <div class="mb-3">
       <label class="form-label">Have you noticed an increase in plastic waste in the river over time?</label><br>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[solidwastemanagement][plasticWaste]" id="plastic-yes" value="Yes" onclick="toggleVisibility('plasticSources', true)">
+        <input class="form-check-input" type="radio" name="data[plasticWaste]" id="plastic-yes" value="Yes" onclick="toggleVisibility('plasticSources', true)" required>
         <label class="form-check-label" for="plastic-yes">Yes</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="data[solidwastemanagement][plasticWaste]" id="plastic-no" value="No" onclick="toggleVisibility('plasticSources', false)">
+        <input class="form-check-input" type="radio" name="data[plasticWaste]" id="plastic-no" value="No" onclick="toggleVisibility('plasticSources', false)" required>
         <label class="form-check-label" for="plastic-no">No</label>
       </div>
     </div>
     <div class="mb-3" id="plasticSources" style="display: none;">
       <label class="form-label" for="sources">If yes, specify major sources</label>
-      <input type="text" class="form-control" name="data[solidwastemanagement][sources]" id="sources" placeholder="Specify sources">
+      <input type="text" class="form-control" name="data[sources]" id="sources" placeholder="Specify sources">
     </div>
 
       <!-- Waste Disposal by Markets, Hotels, or Industries -->
   <div class="mb-3">
     <label class="form-label">Do local markets, hotels, or industries dispose of waste directly into the river?</label><br>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="data[solidwastemanagement][marketWaste]" id="market-waste-yes" value="Yes" onclick="toggleVisibility('wasteType', true)">
+      <input class="form-check-input" type="radio" name="data[marketWaste]" id="market-waste-yes" value="Yes" onclick="toggleVisibility('wasteType', true)" required>
       <label class="form-check-label" for="market-waste-yes">Yes</label>
     </div>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="data[solidwastemanagement][marketWaste]" id="market-waste-no" value="No" onclick="toggleVisibility('wasteType', false)">
+      <input class="form-check-input" type="radio" name="data[marketWaste]" id="market-waste-no" value="No" onclick="toggleVisibility('wasteType', false)" required>
       <label class="form-check-label" for="market-waste-no">No</label>
     </div>
   </div>
   <div class="mb-3" id="wasteType" style="display: none;">
     <label class="form-label" for="waste-type">If yes, specify which type of waste</label>
-    <input type="text" class="form-control" name="data[solidwastemanagement][wasteType]" id="waste-type" placeholder="Specify waste type">
+    <input type="text" class="form-control" name="data[wasteType]" id="waste-type" placeholder="Specify waste type">
   </div>
 
   <!-- Waste Management Facility -->
   <div class="mb-3">
     <label class="form-label">Is there a waste management facility in your locality?</label><br>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="data[solidwastemanagement][wasteFacility]" id="waste-facility-yes" value="Yes" onclick="toggleVisibility('facilityFunctional', true)">
-      <label class="form-check-label" for="waste-facility-yes">Yes</label>
+      <input class="form-check-input" type="radio" name="data[wasteFacility]" id="waste-facility-yes" value="Yes" onclick="toggleVisibility('facilityFunctional', true)" required>
+      <label class="form-check-label" for="waste-facility-yes">Yes</label> 
     </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="data[solidwastemanagement][wasteFacility]" id="waste-facility-no" value="No" onclick="toggleVisibility('facilityFunctional', false)">
+    <div class="form-check form-check-inline"> 
+      <input class="form-check-input" type="radio" name="data[wasteFacility]" id="waste-facility-no" value="No" onclick="toggleVisibility('facilityFunctional', false)" required>
       <label class="form-check-label" for="waste-facility-no">No</label>
     </div>
   </div>
   <div class="mb-3" id="facilityFunctional" style="display: none;">
     <label class="form-label">If yes, is it functional?</label><br>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="data[solidwastemanagement][facilityFunctional]" id="functional-yes" value="Yes">
+      <input class="form-check-input" type="radio" name="data[facilityFunctional]" id="functional-yes" value="Yes" >
       <label class="form-check-label" for="functional-yes">Yes</label>
     </div>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="data[solidwastemanagement][facilityFunctional]" id="functional-no" value="No">
+      <input class="form-check-input" type="radio" name="data[facilityFunctional]" id="functional-no" value="No" >
       <label class="form-check-label" for="functional-no">No</label>
     </div>
   </div>
@@ -127,49 +127,49 @@
   <div class="mb-3">
     <label class="form-label">Are there awareness campaigns or government initiatives for solid waste management?</label><br>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="data[solidwastemanagement][awareness]" id="awareness-yes" value="Yes" onclick="toggleVisibility('campaignDetails', true)">
+      <input class="form-check-input" type="radio" name="data[awareness]" id="awareness-yes" value="Yes" onclick="toggleVisibility('campaignDetails', true)" required>
       <label class="form-check-label" for="awareness-yes">Yes</label>
     </div>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="data[solidwastemanagement][awareness]" id="awareness-no" value="No" onclick="toggleVisibility('campaignDetails', false)">
+      <input class="form-check-input" type="radio" name="data[awareness]" id="awareness-no" value="No" onclick="toggleVisibility('campaignDetails', false)" required>
       <label class="form-check-label" for="awareness-no">No</label>
     </div>
   </div>
   <div class="mb-3" id="campaignDetails" style="display: none;">
     <label class="form-label" for="campaign-details">If yes, what are they?</label>
-    <input type="text" class="form-control" name="data[solidwastemanagement][campaignDetails]" id="campaign-details" placeholder="Describe initiatives">
+    <input type="text" class="form-control" name="data[campaignDetails]" id="campaign-details" placeholder="Describe initiatives">
   </div>
 
   <!-- Illegal Dumping Sites -->
   <div class="mb-3">
     <label class="form-label">Have you observed illegal dumping sites near the river?</label><br>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="data[solidwastemanagement][illegalDumping]" id="illegal-dumping-yes" value="Yes" onclick="toggleVisibility('dumpingLocations', true)">
+      <input class="form-check-input" type="radio" name="data[illegalDumping]" id="illegal-dumping-yes" value="Yes" onclick="toggleVisibility('dumpingLocations', true)" required>
       <label class="form-check-label" for="illegal-dumping-yes">Yes</label>
     </div>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="data[solidwastemanagement][illegalDumping]" id="illegal-dumping-no" value="No" onclick="toggleVisibility('dumpingLocations', false)">
+      <input class="form-check-input" type="radio" name="data[illegalDumping]" id="illegal-dumping-no" value="No" onclick="toggleVisibility('dumpingLocations', false)" required>
       <label class="form-check-label" for="illegal-dumping-no">No</label>
     </div>
   </div>
   <div class="mb-3" id="dumpingLocations" style="display: none;">
     <label class="form-label" for="dumping-locations">If yes, specify locations</label>
-    <input type="text" class="form-control" name="data[solidwastemanagement][dumpingLocations]" id="dumping-locations" placeholder="Specify locations">
+    <input type="text" class="form-control" name="data[dumpingLocations]" id="dumping-locations" placeholder="Specify locations">
   </div>
 
   <!-- Waste Collection Services -->
   <div class="mb-3">
     <label class="form-label">Have waste collection services improved or worsened over the past few years?</label><br>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="data[solidwastemanagement][wasteCollectionStatus]" id="collection-improved" value="Improved">
+      <input class="form-check-input" type="radio" name="data[wasteCollectionStatus]" id="collection-improved"  required value="Improved" >
       <label class="form-check-label" for="collection-improved">Improved</label>
     </div>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="data[solidwastemanagement][wasteCollectionStatus]" id="collection-worsened" value="Worsened">
+      <input class="form-check-input" type="radio" name="data[wasteCollectionStatus]" id="collection-worsened"  required value="Worsened">
       <label class="form-check-label" for="collection-worsened">Worsened</label>
     </div>
     <div class="form-check form-check-inline">
-      <input class="form-check-input" type="radio" name="data[solidwastemanagement][wasteCollectionStatus]" id="collection-no-change" value="No Change">
+      <input class="form-check-input" type="radio" name="data[wasteCollectionStatus]" id="collection-no-change" required  value="No Change">
       <label class="form-check-label" for="collection-no-change">No Change</label>
     </div>
   </div>
