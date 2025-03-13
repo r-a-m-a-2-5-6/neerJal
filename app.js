@@ -95,7 +95,8 @@ app.use("/",data);
 app.use("/",user);
 app.use("/",admin);
 
-
+app.get("/home", (req,res) =>{
+    res.render("main/home.ejs")});
 app.get("*",(req,res) =>{
     throw new ExpressError(400,"Bad Request");
 })
