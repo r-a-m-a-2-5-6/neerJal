@@ -1,6 +1,7 @@
 
 
 mapboxgl.accessToken=maptoken;
+console.log(maptoken, "here");
 const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: 'mapbox://styles/mapbox/streets-v11', // map style
@@ -70,7 +71,7 @@ const map = new mapboxgl.Map({
     
       // Fetch all the forms we want to apply custom Bootstrap validation styles to
       const forms = document.querySelectorAll('.needs-validation')
-    
+      const errorDiv = document.querySelector(".error-display")
       // Loop over them and prevent submission
       Array.from(forms).forEach(form => {
         form.addEventListener('submit', event => {
@@ -78,7 +79,16 @@ const map = new mapboxgl.Map({
             event.preventDefault()
             event.stopPropagation()
           }
-    
+          let invalidFieldName = null;
+          const invalidField = form.querySelector(':invalid');
+          console.log(invalidField)
+        if (invalidField) {
+          console.log("here")
+          invalidFieldName = invalidField.previousElementSibling ? invalidField.previousElementSibling.textContent : invalidField.name;
+          errorDiv.removeClassList = "d-none";
+          console.log(errorDiv)
+          errorDiv.childNodes[1].innerHTML=`${invalidFieldName}+ is required`;
+        }
           form.classList.add('was-validated')
         }, false)
       })

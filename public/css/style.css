@@ -5,16 +5,36 @@ body{
     display: flex;
     height: 100vh;
     flex-direction: column;
+
+  
 }
 .navbar{
     background-color: white;
+    font-family:  "Goblin One,sans-serif" !important;
 }
 
 .container{
     flex: 1;
+    /* background-image: url(/assests/output-onlinepngtools.png);
+    background-size: fit;
+    background-position: center;
+    background-repeat: no-repeat; */
 }
+
+
 footer{
+    border-top: 1px solid rgba(0, 0, 0,0.1);
     background-color: rgba(250, 235, 215,0.2);
+    font-family:  "Goblin One,sans-serif" !important;
+   
+}
+.image-logo{
+    width: 10rem;
+}
+.links-nav a{
+    font-weight: 500;
+    font-size: 18px;
+    color: black !important;
 }
 
 .cursor-pointer{
@@ -30,6 +50,9 @@ input:focus, textarea:focus, select:focus {
     box-shadow: none !important;
 }
 
+.nav-link:hover{
+    color: rgb(228, 24, 24) !important;
+}
 .accordion-button:focus {
     outline: none !important;
     box-shadow: none !important;
@@ -48,6 +71,22 @@ background: linear-gradient(0deg, rgba(244,251,252,1) 0%, rgba(228,244,252,1) 28
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.f-info-header{
+    color: rgb(228, 24, 24);
+    font-weight: 500;
+    font-size: 20px;
+    text-underline-offset: 5px;
+}
+
+.f-info-social{
+    display: flex;
+    flex-direction: row !important;
+}
+.nav-logo{
+    width: 50px;
+    height: 50px;
 }
 
 @media screen {

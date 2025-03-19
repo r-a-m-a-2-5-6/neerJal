@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 const { type } = require("../schema");
 const Schema = mongoose.Schema;
 
-main()
-.catch(err => console.log(err));
+// main()
+// .catch(err => console.log(err));
 
-async function main() {
-  await mongoose.connect(process.env.ATLAS_DB);
-}
+// async function main() {
+//   await mongoose.connect(process.env.ATLAS_DB);
+// }
 
 const dataSchema = new Schema({
         surveyorName:{

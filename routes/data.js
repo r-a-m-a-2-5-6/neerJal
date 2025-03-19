@@ -7,6 +7,9 @@ const Joi = require('joi');
 const { isLoggedIn } = require("../middlewares/middleware.js");
 const methodOverride = require("method-override");
 const dataControllers = require("../controllers/data.js");
+const multer  = require('multer');
+const {storage} = require("../cloduinaryConfig.js");
+const upload = multer({ storage });
 
 const validateData = (req,res,next) =>{
     let {err} = dataSchema.validate(req.body);
@@ -28,7 +31,7 @@ router.get("/contributions",isLoggedIn, wrapAsync(dataControllers.contributions)
 //test vedios route
 router.get("/testVedios",wrapAsync(dataControllers.testVedios ))
 //data post route
-router.post("/main",isLoggedIn,validateData,wrapAsync( dataControllers.dataPost));
+router.post("/main",isLoggedIn,upload.single('data[photographsRemarks]'),validateData,wrapAsync( dataControllers.dataPost));
 //data edit route
 router.get("/edit/:id",isLoggedIn,wrapAsync(dataControllers.editData))
 //put edit data

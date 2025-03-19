@@ -1,4 +1,7 @@
-require('dotenv').config();
+
+require('dotenv').config({path:"../.env"});
+
+
 
 const express = require("express");
 const app= express();
@@ -27,8 +30,8 @@ const methodOverride = require("method-override");
 
 const port = 8080;
 
-// const mongoUrl = process.env.ATLAS_DB;
-const mongoUrl = "mongodb://127.0.0.1:27017/cMahanadi";
+const mongoUrl = process.env.ATLAS_DB;
+// const mongoUrl = "mongodb://127.0.0.1:27017/cMahanadi";
 
 const store = MongoStore.create({
     mongoUrl:mongoUrl,
@@ -57,9 +60,9 @@ const sessionOptions={
 app.engine("ejs",ejsMate);
 
 app.set("view engine","ejs");
-app.set("views",path.join(__dirname,"views"));
+app.set("views",path.join(__dirname,"../views"));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static(path.join(__dirname,"../public")));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json()); 
 
@@ -96,10 +99,15 @@ app.use("/",data);
 app.use("/",user);
 app.use("/",admin);
 
+app.get("/", (req,res) =>{
+    res.render("main/home.ejs");
+})
 
 app.get("*",(req,res) =>{
     throw new ExpressError(400,"Bad Request");
 })
+
+
 
 //error handling
 app.use((err,req,res,next) =>{

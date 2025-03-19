@@ -1,13 +1,13 @@
 <% if(siva && siva.length){ %>
-    <div class="alert alert-success alert-dismissible fade show" >
-        <%= siva %>
+    <div class="alert alert-success alert-dismissible fade show mt-3 text-align-center" >
+        <p class="text-align-center"><%= siva %></p>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <% } %>
 
 <% if(error && error.length){ %>
-    <div class="alert alert-danger alert-dismissible fade show" >
-        <%= error %>
+    <div class="alert alert-danger alert-dismissible fade show mt-3 text-align-center" >
+            <p class="text-align-center"><%= error %></p> 
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <% } %>

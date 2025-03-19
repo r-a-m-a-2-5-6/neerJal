@@ -9,7 +9,7 @@ module.exports.postSignup=async (req,res) =>{
         if(err){
             next(err);
         }
-        req.flash("siva","Account Created Sucessfully")
+        req.flash("siva","Account Created Sucessfully. Welcome to cMahanadi")
     res.redirect("/home")
     })}catch(err){
         req.flash("error",err.message);
@@ -28,11 +28,11 @@ module.exports.login = (req,res)=>{
 module.exports.postLogin =async (req, res, next) => {
     
    if(res.locals.redirectUrl){
-    req.flash("siva", "Logged in sucessfully. Welcome Back to NeerJal");
+    req.flash("siva", "Logged in sucessfully. Welcome Back to cMahanadi!");
     res.redirect(res.locals.redirectUrl)
-    console.log(res.locals.redirectUrl)}
+    }
     else{
-        req.flash("siva", "Logged in sucessfully. Welcome Back to NeerJal");
+        req.flash("siva", "Logged in sucessfully. Welcome Back to cMahanadi!");
         res.redirect("/home")
     }
     
@@ -44,6 +44,6 @@ module.exports.logout =(req,res,next)=>{
             next(err);
         }
     })
-    req.flash("siva","Log Out sucessfully");
+    req.flash("siva","Log Out sucessfully. Visit cMahanadi again!");
     res.redirect("/home")
 }

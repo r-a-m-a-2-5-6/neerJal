@@ -1,22 +1,28 @@
 <%- layout('layouts/boilerplate') %>
 <script>
    const maptoken = "<%=process.env.MAP_TOKEN %>";
+   console.log(maptoken,"here")
 </script>
 
 <body>
-    <div class="map-box  mt-3" id="map" style=' height: 300px;'>
-    </div>
-    <form class="details-form my-4 needs-validation" action="/main" method="POST" novalidate>
+    <div class="map-box  mt-3" id="map" style=' height: 300px;'></div>
+
+
+    <form class="details-form my-4 needs-validation" action="/main" method="POST" novalidate enctype="multipart/form-data">
+
         <div class="accordion shadow mb-3 bg-body-tertiary rounded" id="accordionExample">
             <%-include("../includes/accodian.ejs")  %>
         </div >
+
         <div class="button-div flex justify-content-end align-items-center">
+            <div class="alert alert-danger alert-dismissible fade show  error-display d-none" >
+                <p class="error-text">No error </p>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> -->
+            </div>
             <button type="submit" class="btn  btn-primary">Submit</button>
         </div>
+
         </form>
-    </div>
     
-    <script src="/js/mapsapi.js">
-    </script>
-    
+        <script src="/js/mapsapi.js"></script>
     </body>

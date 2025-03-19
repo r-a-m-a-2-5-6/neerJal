@@ -9,12 +9,13 @@ module.exports.home=async (req,res) =>{
 module.exports.dataPost = async (req,res) =>{
     let data = req.body;
     let user = req.user;
-    console.log("main is working")
     let insertData = new Data(req.body.data);
     insertData.date=date;
+    let url = req.file.path;
+    insertData.photographsRemarks=url;
     insertData.user=user._id;
     await insertData.save();
-    req.flash("siva","Data send sucessfully");
+    req.flash("siva","Data send sucessfully. Thanks for your contribution");
     res.redirect("/home")
 };
 
@@ -49,7 +50,6 @@ module.exports.putData= async (req,res) =>{
     let data =req.body;
     let {id} = req.params;
     let updateData = await Data.findByIdAndUpdate(id,data);
-    console.log(updateData,data)
     if(updateData){
         req.flash("siva","Data Updated sucessfully");
     }

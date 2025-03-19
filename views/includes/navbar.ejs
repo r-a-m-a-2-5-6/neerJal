@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand d-flex align-items-center" href="/home">
-      <i class="fa-solid fa-compass"></i> 
-      <span class="ms-2">NeerJal</span>
+      <img src="assests/logo_c-JypCbYRE.png" alt="logo_image" class="nav-logo">
+      
     </a>
     
     <!-- Navbar toggle button for mobile view -->
@@ -12,31 +12,34 @@
     
     <!-- Navbar items -->
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/profile">Profile</a>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item links-nav mx-2">
+          <a class="nav-link " href="/profile">Profile</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item  links-nav mx-2">
           <a class="nav-link" href="/contributions">Contributions</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item links-nav mx-2">
           <a class="nav-link" href="/testVedios">Test Vedios</a>
+        </li>
+        <li class="nav-item links-nav mx-2">
+          <a class="nav-link" href="http://localhost:5173/">Go To cMahanadi</a>
         </li>
       </ul>
 
       <!-- Auth links (SignUp, Log In, Log Out) -->
       <ul class="navbar-nav">
-        <% if(!curUser ) {%>
-        <li class="nav-item">
-          <a class="nav-link" href="/signup">Sign Up</a>
+        <% if(!curUser ) { console.log(curUser)%>
+        <li class="nav-item mx-2 mb-2">
+          <a class=" btn btn-danger" href="/signup">Sign Up</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Log In</a>
+        <li class="nav-item mx-2 ">
+          <a class=" btn btn-primary" href="/login">Log In</a>
         </li>
         <% } %>
         <% if(curUser) { %>
-        <li class="nav-item">
-          <a class="nav-link" href="/logout">Log Out</a>
+        <li class="nav-item mx-2 ">
+          <a class="btn btn-primary " href="/logout" style="color: white;">Log Out</a>
         </li>
         <% } %>
       </ul>
