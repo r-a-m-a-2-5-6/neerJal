@@ -1,5 +1,5 @@
 
-require('dotenv').config({path:"../.env"});
+require('dotenv').config({path:"./.env"});
 
 
 
@@ -8,17 +8,17 @@ const app= express();
 const mongoose = require("mongoose");
 const ejsMate=require("ejs-mate");
 const path = require("path");
-const data=require("../routes/data.js");
-const user=require("../routes/user.js");
-const admin = require("../routes/admin.js")
-const User= require("../model/userSchema.js");
+const data=require("./routes/data.js");
+const user=require("./routes/user.js");
+const admin = require("./routes/admin.js")
+const User= require("./model/userSchema.js");
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
-const Data = require("../model/dataSchema.js");
-const ExpressError = require("../utils/ExpressError.js");
-const wrapAsync = require("../utils/wrapAsync.js");
-const {checkToken} = require("../middlewares/middleware.js");
-const {dataSchema} = require("../schema.js");
+const Data = require("./model/dataSchema.js");
+const ExpressError = require("./utils/ExpressError.js");
+const wrapAsync = require("./utils/wrapAsync.js");
+const {checkToken} = require("./middlewares/middleware.js");
+const {dataSchema} = require("./schema.js");
 const flash = require("connect-flash");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
@@ -60,9 +60,9 @@ const sessionOptions={
 app.engine("ejs",ejsMate);
 
 app.set("view engine","ejs");
-app.set("views",path.join(__dirname,"../views"));
+app.set("views",path.join(__dirname,"views"));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname,"../public")));
+app.use(express.static(path.join(__dirname,"public")));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json()); 
 
